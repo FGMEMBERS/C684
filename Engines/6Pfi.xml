@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+  File:     Renault 6Pfi.xml
+  Author:   Aero-Matic v 0.81
+
+  Inputs:
+    name:           Renault 6Pfi
+    type:           piston
+    power:          170 hp
+    augmented?      no
+    injected?       no
+-->
+
+<piston_engine name="Renault 6Pfi">
+  <minmp unit="INHG">          6.0 </minmp><!-- Deprecated -->
+  <maxmp unit="INHG">         29.9 </maxmp><!-- Deprecated -->
+  <displacement unit="IN3"> 323.00 </displacement>
+  <bsfc>           0.45 </bsfc>
+  <maxhp>        170.00 </maxhp><!-- Deprecated -->
+  <cycles>         4.0 </cycles>
+  <idlerpm>      700.0 </idlerpm>
+  <maxrpm>      2700.0 </maxrpm>
+  <maxthrottle>    1.0 </maxthrottle>
+  <minthrottle>    0.1 </minthrottle>
+  <sparkfaildrop>  0.0 </sparkfaildrop>
+</piston_engine>
+

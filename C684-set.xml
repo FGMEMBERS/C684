@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <sim>
+	 <description>Caudron C684 Super Rafale</description>
+	 <author>Guillaume Chauvat, Laurent Hayvel (texture)</author>
+	 <status>alpha</status>
+<help>
+<title>Caudron C684</title>
+<line>Procedures</line>
+</help>
+
+<model>
+<path>Aircraft/C684/Models/C684-model.xml</path>
+</model>
+
+  <flight-model>jsb</flight-model>
+  <aero>C684</aero>
+  <startup>
+    <splash-texture>Aircraft/C684/splash.png</splash-texture>
+  </startup>
+
+  <flaps>
+	  <setting>0.0</setting>
+	  <setting>0.4</setting>
+	  <setting>1.0</setting>
+  </flaps>
+  
+  
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+  
+  <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+  
+  <view>
+    <!-- set true if you want 3d cockpit -->
+   <internal archive="y">true</internal>
+   <config>
+     <x-offset-m archive="y">0.00</x-offset-m>
+     <y-offset-m archive="y">0.44</y-offset-m>
+     <z-offset-m archive="y">0.55</z-offset-m>
+   </config>
+  </view>
+  <sound>
+   <path archive="y">Aircraft/C684/Sounds/C684-sound.xml</path>
+  </sound>
+</sim>
+<!--
+<consumables>
+	 <fuel>
+		 <tank n="1">
+			 <level-gal_us>50</level-gal_us>
+		 </tank>
+		 <tank n="2">
+			 <level-gal_us>50</level-gal_us>
+		 </tank>
+
+	 </fuel>
+ </consumables>
+-->
+ <C684>
+	 <instrumentation>
+	 </instrumentation>
+	 <controls>
+	 </controls>
+	 <systems>
+	 </systems>
+ </C684>
+ <input>
+    <keyboard>
+<!--
+	<key n="121">
+		<name>y</name>
+		<desc>Change livreas</desc>
+		<binding n="0">
+			<command>nasal</command>
+			<script>an2.change_livreas()</script>
+		</binding>
+	</key>
+-->
+   </keyboard>		
+</input>
+
+<!--
+ <engines>
+  <engine>
+   <rpm type="double">700</rpm>
+  </engine>
+ </engines>
+-->
+
+<!-- Nasal files/scripts -->
+<nasal>
+<!--
+	<electrical>
+		<file>Aircraft/C684/Systems/electrical.nas</file>
+	</electrical>
+	
+	<fuel>
+		<file>Aircraft/C684/Systems/fuel.nas</file>
+	</fuel>
+
+       <controls>
+          <file>Aircraft/C684/Systems/controls.nas</file>
+        </controls>
+
+	<C684>
+		<file>Aircraft/C684/Systems/C684.nas</file>
+	</C684>
+-->
+</nasal>
+
+</PropertyList>
