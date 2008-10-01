@@ -1,0 +1,9 @@
+Caudron C.684 version 0.0.4
+FDM: JSBSim
+This Aircraft is licensed under the GNU General Public License version 2 or above. See COPYING for more infomation.
+
+TODO:
+- improve cockpit
+- FDM: better stall and takeoff behaviour
+- 3D model, texture...
+
