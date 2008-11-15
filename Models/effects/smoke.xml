@@ -30,6 +30,10 @@
           <property>engines/engine[0]/running</property>
           <value>true</value>
         </equals>
+        <not-equals>
+          <property>/sim/current-view/view-number</property>
+          <value>0</value>
+        </not-equals>
       </and>
     </condition>
 
@@ -40,13 +44,13 @@
     </placer>
 
     <shooter>
-      <theta-min-deg>0</theta-min-deg>
-      <theta-max-deg>0</theta-max-deg>
-      <phi-min-deg>0</phi-min-deg>
-      <phi-max-deg>0</phi-max-deg>
+      <theta-min-deg>-6</theta-min-deg>
+      <theta-max-deg>6</theta-max-deg>
+      <phi-min-deg>-4</phi-min-deg>
+      <phi-max-deg>4</phi-max-deg>
       <speed-mps>
-        <value>5</value>
-        <spread>0</spread>
+        <value>15</value>
+        <spread>3</spread>
       </speed-mps>
       <rotation-speed>
         <x-min-deg-sec>0</x-min-deg-sec>
@@ -73,7 +77,7 @@
           <red><value>   0.5 </value></red>
           <green><value> 0.5 </value></green>
           <blue><value>  0.5 </value></blue>
-          <alpha><value> 0.05 </value></alpha>
+          <alpha><value> 0.03 </value></alpha>
         </color>
         <size>
           <value>0.1</value>
@@ -88,12 +92,12 @@
           <alpha><value> 0.0 </value></alpha>
         </color>
         <size>
-          <value>0.7</value>
+          <value>2.0</value>
         </size>
       </end>
 
       <life-sec>
-        <value>0.6</value>
+        <value>0.8</value>
       </life-sec>
         
       <mass-kg>  0.02 </mass-kg>

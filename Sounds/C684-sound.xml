@@ -9,14 +9,14 @@
    <path>Sounds/engstart.wav</path>
    <property>/engines/engine/cranking</property>
    <volume>
-    <offset>-0.4</offset>
+    <offset>-0.3</offset>
    </volume>
   </crank>
 
   <crank>
    <name>crank</name>
    <mode>looped</mode>
-   <path>Aircraft/C684/Sounds/p51d_starter.wav</path>
+   <path>Sounds/coughing.wav</path>
    <condition>
     <property>/engines/engine/cranking</property>
     <not>
@@ -24,11 +24,11 @@
     </not>
    </condition>
    <volume>
-    <offset>-0.5</offset>
+    <offset>-0.2</offset>
    </volume>
    <pitch>
     <property>/engines/engine/cranking</property>
-    <factor>1.0</factor>
+    <offset>-0.3</offset>
    </pitch>
   </crank>
 
@@ -111,27 +111,9 @@
    <volume>
     <property>/velocities/airspeed-kt</property>
     <type>log</type>
-    <factor>0.25</factor>
+    <factor>0.4</factor>
    </volume>
   </rumble>
-
-  <gear>
-   <name>gear</name>
-   <mode>in-transit</mode>
-   <path>Sounds/gear.wav</path>
-   <property>/gear/gear[0]/position-norm</property>
-  </gear>
-
-  <gear>
-   <name>gear-lock</name>
-   <path>Sounds/gear-lck.wav</path>
-   <condition>
-    <greater-than>
-     <property>/gear/gear[0]/position-norm</property>
-     <value>0.9</value>
-    </greater-than>
-   </condition>
-  </gear>
 
   <squeal>
    <name>squeal</name>
@@ -194,18 +176,7 @@
     <max>1.0</max>
    </pitch>
   </wind>
- 
-  <stall>
-   <name>stall</name>
-   <mode>looped</mode>
-   <path>Sounds/stall.wav</path>
-   <property>/sim/alarms/stall-warning</property>
-   <volume>
-    <property>/sim/alarms/stall-warning</property>
-    <max>1.0</max>
-   </volume>
-  </stall>
- 
+
 </fx>
  
 </PropertyList>

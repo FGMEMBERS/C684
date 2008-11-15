@@ -1,18 +1,53 @@
 <?xml version="1.0"?>
 <PropertyList>
 
- <sim>
-	 <description>Caudron C684 Super Rafale</description>
-	 <author>Guillaume Chauvat, Laurent Hayvel (texture)</author>
-	 <status>alpha</status>
-<help>
-<title>Caudron C684</title>
-<line>Procedures</line>
-</help>
+<sim>
+  <description>Caudron C684 Super Rafale</description>
+  <author>Guillaume Chauvat, Laurent Hayvel (texture)</author>
+  <status>beta (0.1.0)</status>
+  <help>
+    <key>
+      <name>Ctrl-D</name>
+      <desc>Switch to low pitch (on ground and engine stopped)</desc>
+    </key>
+    <title>Caudron C684</title>
+    <line>____________________Procedures____________________</line>
+    <line></line>
+    <line>Startup:</line>
+    <line>  Magnetos: both</line>
+    <line>  Starter (5 seconds maxi)</line>
+    <line></line>
+    <line>Before Takeoff:</line>
+    <line>  Flaps: 15 deg</line>
+    <line></line>
+    <line>Takeoff:</line>
+    <line>  Apply full power</line>
+    <line>  Lift tail wheel at 100 km/h</line>
+    <line>  Takeoff at 130 km/h</line>
+    <line>  Climb at 150 km/h</line>
+    <line>  Flaps: 0 deg</line>
+    <line></line>
+    <line>Cruise:</line>
+    <line>  Full power</line>
+    <line>  The pitch becomes high at 2750 rpm</line>
+    <line>  2300 rpm</line>
+    <line>  250 km/h</line>
+    <line>Downwind:</line>
+    <line>  Speed: 160 km/h</line>
+    <line>  Flaps: 15 deg</line>
+    <line></line>
+    <line>Final:</line>
+    <line>  Flaps: 40 deg</line>
+    <line>  Speed: 140 km/h</line>
+    <line></line>
+    <line>At Parking:</line>
+    <line>  Magnetos: off</line>
+    <line>  Pitch: low</line>
+  </help>
 
-<model>
-<path>Aircraft/C684/Models/C684-model.xml</path>
-</model>
+  <model>
+    <path>Aircraft/C684/Models/C684-model.xml</path>
+  </model>
 
   <flight-model>jsb</flight-model>
   <aero>C684</aero>
@@ -21,9 +56,9 @@
   </startup>
 
   <flaps>
-	  <setting>0.0</setting>
-	  <setting>0.4</setting>
-	  <setting>1.0</setting>
+    <setting>0.0</setting>
+    <setting>0.4</setting>
+    <setting>1.0</setting>
   </flaps>
   
   
@@ -33,81 +68,67 @@
   
   <view>
     <!-- set true if you want 3d cockpit -->
-   <internal archive="y">true</internal>
-   <config>
-     <x-offset-m archive="y">0.00</x-offset-m>
-     <y-offset-m archive="y">0.41</y-offset-m>
-     <z-offset-m archive="y">0.55</z-offset-m>
-     <pitch-offset-deg>-12</pitch-offset-deg>
-   </config>
+    <internal archive="y">true</internal>
+    <config>
+      <x-offset-m archive="y">0.00</x-offset-m>
+      <y-offset-m archive="y">0.41</y-offset-m>
+      <z-offset-m archive="y">0.55</z-offset-m>
+      <pitch-offset-deg>-12</pitch-offset-deg>
+    </config>
   </view>
   <sound>
-   <path archive="y">Aircraft/C684/Sounds/C684-sound.xml</path>
+    <path archive="y">Aircraft/C684/Sounds/C684-sound.xml</path>
   </sound>
 </sim>
 <!--
 <consumables>
-	 <fuel>
-		 <tank n="1">
-			 <level-gal_us>50</level-gal_us>
-		 </tank>
-		 <tank n="2">
-			 <level-gal_us>50</level-gal_us>
-		 </tank>
+  <fuel>
+    <tank n="1">
+      <level-gal_us>50</level-gal_us>
+    </tank>
+    <tank n="2">
+      <level-gal_us>50</level-gal_us>
+    </tank>
+  </fuel>
+</consumables>
+-->
+<controls>
+  <engines>
+    <engine n="0">
+      <propeller-pitch>0.0</propeller-pitch> <!-- start at low pitch -->
+    </engine>
+  </engines>
+</controls>
 
-	 </fuel>
- </consumables>
--->
- <C684>
-	 <instrumentation>
-	 </instrumentation>
-	 <controls>
-	 </controls>
-	 <systems>
-	 </systems>
- </C684>
- <input>
-    <keyboard>
-<!--
-	<key n="121">
-		<name>y</name>
-		<desc>Change livreas</desc>
-		<binding n="0">
-			<command>nasal</command>
-			<script>an2.change_livreas()</script>
-		</binding>
-	</key>
--->
-   </keyboard>		
+<input>
+  <keyboard>
+    <key n="4">
+      <name>Ctrl-D</name>
+      <desc>Reset propeller pitch (on ground only)</desc>
+      <binding n="0">
+        <command>nasal</command>
+        <script>C684.resetPitch();</script>
+      </binding>
+    </key>
+  </keyboard>
 </input>
-
-<!--
- <engines>
-  <engine>
-   <rpm type="double">700</rpm>
-  </engine>
- </engines>
--->
 
 <!-- Nasal files/scripts -->
 <nasal>
 <!--
-	<electrical>
-		<file>Aircraft/C684/Systems/electrical.nas</file>
-	</electrical>
-	
-	<fuel>
-		<file>Aircraft/C684/Systems/fuel.nas</file>
-	</fuel>
-
-       <controls>
-          <file>Aircraft/C684/Systems/controls.nas</file>
-        </controls>
-
-	<C684>
-		<file>Aircraft/C684/Systems/C684.nas</file>
-	</C684>
+  <electrical>
+    <file>Aircraft/C684/Systems/electrical.nas</file>
+  </electrical>
+  <fuel>
+    <file>Aircraft/C684/Systems/fuel.nas</file>
+  </fuel>
+  <controls>
+    <file>Aircraft/C684/Systems/controls.nas</file>
+  </controls>
 -->
+  <C684>
+    <file>Aircraft/C684/Nasal/C684.nas</file>
+  </C684>
 </nasal>
 
 </PropertyList>

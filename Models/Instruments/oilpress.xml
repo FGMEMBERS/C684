@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>oilpress.ac</path>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>aiguille</object-name>
+    <property>engines/engine/oil-pressure-psi</property>
+    <interpolation>
+      <entry>
+        <ind>0.0</ind>
+        <dep>-30</dep>
+      </entry>
+      <entry>
+        <ind>29.0</ind>
+        <dep>-16.5</dep>
+      </entry>
+      <entry>
+        <ind>58.0</ind>
+        <dep>-3.3</dep>
+      </entry>
+      <entry>
+        <ind>87.0</ind>
+        <dep>7.8</dep>
+      </entry>
+      <entry>
+        <ind>116.0</ind>
+        <dep>19.2</dep>
+      </entry>
+      <entry>
+        <ind>145.0</ind>
+        <dep>28.5</dep>
+      </entry>
+      <entry>
+        <ind>200.0</ind>
+        <dep>35.0</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m> 0</x-m>
+      <y-m> 0</y-m>
+      <z-m>-0.008</z-m>
+    </center>
+  </animation>
+
+</PropertyList>

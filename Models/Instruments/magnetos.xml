@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>magnetos.ac</path>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Tumbler</object-name>
+    <object-name>Key</object-name>
+    <property>controls/engines/engine[0]/magnetos</property>
+    <interpolation>
+      <entry><ind> 0</ind><dep> 0</dep></entry>
+      <entry><ind> 1</ind><dep> 25</dep></entry>
+      <entry><ind> 2</ind><dep> 50</dep></entry>
+      <entry><ind> 3</ind><dep>100</dep></entry>
+    </interpolation>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0.0</z-m>  
+    </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>mag.Down</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>controls.stepMagnetos(-1)</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>mag.Up</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>controls.stepMagnetos(1)</script>
+      </binding>
+    </action>
+ </animation>
+
+</PropertyList>

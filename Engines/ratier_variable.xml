@@ -4,15 +4,14 @@
   <ixx> 1.9 </ixx>
   <diameter unit="IN"> 78.7 </diameter>
   <numblades> 2 </numblades>
-  <minpitch> 10 </minpitch>
-  <maxpitch> 35 </maxpitch>
+  <minpitch> 17 </minpitch>
+  <maxpitch> 24 </maxpitch>
   <gearratio> 1.0 </gearratio>
-  <minrpm>  700 </minrpm>
-  <maxrpm> 2700 </maxrpm>
 
   <table name="C_THRUST" type="internal">
     <tableData>
 		9.6	11	15	19	23	27	31	35
+        0.00    0.0650  0.0750  0.0820  0.0765  0.0882  0.1005  0.1070  0.1220
 	0.10	0.0618	0.0700	0.0815	0.0798	0.0877	0.0990	0.1103	0.1253
 	0.15	0.0571	0.0654	0.0802	0.0828	0.0871	0.0963	0.1055	0.1205
 	0.20	0.0516	0.0603	0.0782	0.0841	0.0864	0.0940	0.1016	0.1166
