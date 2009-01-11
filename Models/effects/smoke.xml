@@ -18,7 +18,7 @@
     <texture>smoke.png</texture>
 
     <emissive type="bool">false</emissive>
-    <lighting type="bool">false</lighting>
+    <lighting type="bool">true</lighting>
 
     <condition>
       <and>
@@ -40,14 +40,26 @@
     <attach>world</attach>
 
     <placer>
-      <type>point</type> 
+      <type>segments</type> 
+      <segments>
+        <vertex>
+          <x-m>0.87</x-m>
+          <y-m>-0.27</y-m>
+          <z-m>-0.68</z-m>
+        </vertex>
+        <vertex>
+          <x-m>1.52</x-m>
+          <y-m>-0.34</y-m>
+          <z-m>-0.70</z-m>
+        </vertex>
+      </segments>
     </placer>
 
     <shooter>
-      <theta-min-deg>-6</theta-min-deg>
-      <theta-max-deg>6</theta-max-deg>
-      <phi-min-deg>-4</phi-min-deg>
-      <phi-max-deg>4</phi-max-deg>
+      <theta-min-deg>-30</theta-min-deg>
+      <theta-max-deg>30</theta-max-deg>
+      <phi-min-deg>-30</phi-min-deg>
+      <phi-max-deg>30</phi-max-deg>
       <speed-mps>
         <value>15</value>
         <spread>3</spread>
@@ -65,8 +77,8 @@
     <counter>
       <particles-per-sec>
         <property>controls/engines/engine[0]/throttle</property>
-        <factor>200</factor>
-        <offset>50</offset>
+        <factor>100</factor>
+        <offset>40</offset>
         <spread>0</spread>
       </particles-per-sec>
     </counter>
@@ -107,7 +119,7 @@
     <program>
       <fluid>               air  </fluid>
       <gravity type="bool"> false </gravity>
-      <wind typ="bool">     true </wind>
+      <wind typ="bool">     false </wind>
     </program>
 
   </particlesystem>

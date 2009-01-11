@@ -1,19 +1,25 @@
 <?xml version="1.0"?>
+
 <PropertyList>
 
 <sim>
-  <description>Caudron C684 Super Rafale</description>
+  <description>Caudron C.684 Super Rafale</description>
   <author>Guillaume Chauvat, Laurent Hayvel (texture)</author>
-  <status>beta (0.1.0)</status>
+  <status>beta (0.3.0)</status>
   <help>
     <key>
-      <name>Ctrl-D</name>
-      <desc>Switch to low pitch (on ground and engine stopped)</desc>
+      <name>g</name>
+      <desc>Switch propeller to high pitch</desc>
+    </key>
+    <key>
+      <name>G</name>
+      <desc>Switch propeller to low pitch (on ground and engine stopped)</desc>
     </key>
     <title>Caudron C684</title>
     <line>____________________Procedures____________________</line>
     <line></line>
     <line>Startup:</line>
+    <line>  Battery: on</line>
     <line>  Magnetos: both</line>
     <line>  Starter (5 seconds maxi)</line>
     <line></line>
@@ -28,8 +34,7 @@
     <line>  Flaps: 0 deg</line>
     <line></line>
     <line>Cruise:</line>
-    <line>  Full power</line>
-    <line>  The pitch becomes high at 2750 rpm</line>
+    <line>  Pitch: high (g)</line>
     <line>  2300 rpm</line>
     <line>  250 km/h</line>
     <line>Downwind:</line>
@@ -39,9 +44,12 @@
     <line>Final:</line>
     <line>  Flaps: 40 deg</line>
     <line>  Speed: 140 km/h</line>
+    <line>  WARNING! you can NOT takeoff with high pitch,</line>
+    <line>           do NOT try to go around!</line>
     <line></line>
     <line>At Parking:</line>
     <line>  Magnetos: off</line>
+    <line>  Battery: off</line>
     <line>  Pitch: low</line>
   </help>
 
@@ -57,11 +65,16 @@
 
   <flaps>
     <setting>0.0</setting>
-    <setting>0.4</setting>
+    <setting>0.38</setting>
     <setting>1.0</setting>
   </flaps>
-  
-  
+<!--
+  <systems>
+    <electrical>
+      <path>Aircraft/C684/Systems/electrical.xml</path>
+    </electrical>
+  </systems>
+-->
   <virtual-cockpit archive="y">true</virtual-cockpit>
   
   <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
@@ -98,26 +111,76 @@
       <propeller-pitch>0.0</propeller-pitch> <!-- start at low pitch -->
     </engine>
   </engines>
+  <electric>
+    <battery-switch>0</battery-switch>
+  </electric>
 </controls>
 
 <input>
   <keyboard>
-    <key n="4">
-      <name>Ctrl-D</name>
+    <key n="103">
+      <name>g</name>
+      <desc>Switch propeller to high pitch</desc>
+      <binding n="0">
+        <command>nasal</command>
+        <script>C684.setPitch(1);</script>
+      </binding>
+    </key>
+    <key n="71">
+      <name>G</name>
       <desc>Reset propeller pitch (on ground only)</desc>
       <binding n="0">
         <command>nasal</command>
-        <script>C684.resetPitch();</script>
+        <script>C684.setPitch(-1);</script>
       </binding>
     </key>
+    <key n="115">
+      <name>s</name>
+      <desc>Fire Starter on Selected Engine(s)</desc>
+      <binding>
+        <command>nasal</command>
+        <script>C684.starter(1);</script>
+      </binding>
+      <mod-up>
+        <binding>
+        <command>nasal</command>
+        <script>C684.starter(0);</script>
+        </binding>               
+      </mod-up>
+    </key>    
   </keyboard>
 </input>
+
+<payload>
+  <weight>
+    <name type="string">Pilot</name>
+    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+    <min-lb type="double">0.0</min-lb>
+    <max-lb type="double">250.0</max-lb>
+  </weight>
+  <weight>
+    <name type="string">Passenger</name>
+    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+    <min-lb type="double">0.0</min-lb>
+    <max-lb type="double">250.0</max-lb>
+  </weight>
+</payload>
+
+<limits>
+  <max-flap-extension-speed>
+    <flaps>0.4</flaps>
+    <speed>103</speed>
+  </max-flap-extension-speed>
+  <max-positive-g>3.5</max-positive-g>
+  <max-negative-g>-1.5</max-negative-g>
+  <vne>215</vne>
+</limits>
 
 <!-- Nasal files/scripts -->
 <nasal>
 <!--
   <electrical>
-    <file>Aircraft/C684/Systems/electrical.nas</file>
+    <file>Aircraft/C684/Nasal/electrical.nas</file>
   </electrical>
   <fuel>
     <file>Aircraft/C684/Systems/fuel.nas</file>

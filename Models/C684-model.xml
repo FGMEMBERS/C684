@@ -40,13 +40,50 @@
     <object-name>pale2</object-name>
   </animation>
 
-<!-- fumée -->
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>chrome2.png</texture>
+    <object-name>verriere</object-name>
+  </animation>
+
+<!-- fumée et poussière -->
   <model>
     <path>Aircraft/C684/Models/effects/smoke.xml</path>
     <offsets>
-      <x-m>  1.45 </x-m>
+      <x-m>  0.90 </x-m>
       <y-m>  0.35 </y-m>
-      <z-m> -0.65 </z-m>
+      <z-m> -0.75 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <condition>
+      <property>gear/gear[0]/wow</property>
+    </condition>
+    <path>Aircraft/C684/Models/effects/dust.xml</path>
+    <offsets>
+      <x-m>  2.25 </x-m>
+      <y-m> -0.90 </y-m>
+      <z-m> -1.34 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <condition>
+      <property>gear/gear[1]/wow</property>
+    </condition>
+    <path>Aircraft/C684/Models/effects/dust.xml</path>
+    <offsets>
+      <x-m>  2.25 </x-m>
+      <y-m>  0.90 </y-m>
+      <z-m> -1.34 </z-m>
       <roll-deg>    0.000 </roll-deg>
       <pitch-deg>   0.000 </pitch-deg>
       <heading-deg> 0.000 </heading-deg>
@@ -54,6 +91,26 @@
   </model>
 
 <!-- Hélice -->
+
+  <animation>
+    <type>rotate</type>
+    <object-name>cone</object-name>
+    <object-name>pale1</object-name>
+    <object-name>pale2</object-name>
+    <property>controls/engines/engine[0]/propeller-offset</property>
+    <factor>360</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.003</z-m>
+    </center>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
   <animation>
     <type>spin</type>
     <object-name>helice</object-name>
@@ -92,6 +149,40 @@
         <value>200</value>
       </greater-than>
     </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>pale1</object-name>
+    <property>controls/engines/engine[0]/propeller-pitch</property>
+    <factor>-10</factor>
+    <center>
+      <x-m>0.334</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>pale2</object-name>
+    <property>controls/engines/engine[0]/propeller-pitch</property>
+    <factor>-10</factor>
+    <center>
+      <x-m>0.334</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>-1.0</z>
+    </axis>
   </animation>
 
 <!-- ailerons -->
@@ -165,7 +256,7 @@
     <type>rotate</type>
     <object-name>voletG</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor>-40</factor>
+    <factor>-65</factor>
     <axis>
       <x1-m>2.93</x1-m>
       <y1-m>-0.39</y1-m>
@@ -180,7 +271,7 @@
     <type>rotate</type>
     <object-name>voletD</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor>40</factor>
+    <factor>65</factor>
     <axis>
       <x1-m>2.93</x1-m>
       <y1-m>0.39</y1-m>
@@ -293,7 +384,7 @@
     <type>spin</type>
     <object-name>roueG</object-name>
     <object-name>roueD</object-name>
-    <property>velocities/groundspeed-kt</property>
+    <property>velocities/uBody-fps</property>
     <factor>-10</factor>
     <center>
       <x-m>2.111</x-m>

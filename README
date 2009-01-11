@@ -1,7 +1,7 @@
-Caudron C.684 version 0.1.0
+Caudron C.684 version 0.3.0
 FDM: JSBSim
 This Aircraft is licensed under the GNU General Public License version 2 or above. See COPYING for more infomation.
 
 TODO:
-- assymetric stall
-- 3D model, particles effects...
+- FDM improvements (altough the stall behaviour is now more realistic)
+- better 3D cockpit
