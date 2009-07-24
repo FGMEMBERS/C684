@@ -36,6 +36,10 @@
         <command>property-toggle</command>
         <property>/controls/electric/battery-switch</property>
       </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/switch</property>
+      </binding>
     </action>
   </animation>
 

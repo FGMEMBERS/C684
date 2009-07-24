@@ -21,38 +21,16 @@
     <lighting type="bool">true</lighting>
 
     <condition>
-      <and>
-        <greater-than>
-          <property>engines/engine[0]/rpm</property>
-          <value>100</value>
-        </greater-than>
-        <equals>
-          <property>engines/engine[0]/running</property>
-          <value>true</value>
-        </equals>
-        <not-equals>
-          <property>/sim/current-view/view-number</property>
-          <value>0</value>
-        </not-equals>
-      </and>
+      <greater-than>
+        <property>controls/engines/engine[0]/faults/smoke</property>
+        <value>0</value>
+      </greater-than>
     </condition>
 
     <attach>world</attach>
 
     <placer>
-      <type>segments</type> 
-      <segments>
-        <vertex>
-          <x-m>0.87</x-m>
-          <y-m>-0.27</y-m>
-          <z-m>-0.68</z-m>
-        </vertex>
-        <vertex>
-          <x-m>1.52</x-m>
-          <y-m>-0.34</y-m>
-          <z-m>-0.70</z-m>
-        </vertex>
-      </segments>
+      <type>point</type>
     </placer>
 
     <shooter>
@@ -65,61 +43,61 @@
         <spread>3</spread>
       </speed-mps>
       <rotation-speed>
-        <x-min-deg-sec>0</x-min-deg-sec>
-        <y-min-deg-sec>0</y-min-deg-sec>
-        <z-min-deg-sec>0</z-min-deg-sec>
-        <x-max-deg-sec>0</x-max-deg-sec>
-        <y-max-deg-sec>0</y-max-deg-sec>
-        <z-max-deg-sec>0</z-max-deg-sec>
+        <x-min-deg-sec>-30</x-min-deg-sec>
+        <y-min-deg-sec>-30</y-min-deg-sec>
+        <z-min-deg-sec>-30</z-min-deg-sec>
+        <x-max-deg-sec>30</x-max-deg-sec>
+        <y-max-deg-sec>30</y-max-deg-sec>
+        <z-max-deg-sec>30</z-max-deg-sec>
       </rotation-speed>
     </shooter>
 
     <counter>
       <particles-per-sec>
-        <property>controls/engines/engine[0]/throttle</property>
-        <factor>100</factor>
-        <offset>40</offset>
-        <spread>0</spread>
+        <property>controls/engines/engine[0]/faults/smoke</property>
+        <factor>20</factor>
+        <offset>0</offset>
+        <spread>9</spread>
       </particles-per-sec>
     </counter>
 
     <particle>
       <start>
         <color>
-          <red><value>   0.5 </value></red>
-          <green><value> 0.5 </value></green>
-          <blue><value>  0.5 </value></blue>
-          <alpha><value> 0.03 </value></alpha>
+          <red><value>   0.3 </value></red>
+          <green><value> 0.3 </value></green>
+          <blue><value>  0.3 </value></blue>
+          <alpha><value> 0.3 </value></alpha>
         </color>
         <size>
-          <value>0.1</value>
+          <value>0.3</value>
         </size>
       </start>
 
       <end>
         <color>
-          <red><value>   0.7 </value></red>
-          <green><value> 0.7 </value></green>
-          <blue><value>  0.7 </value></blue>
+          <red><value>   0.4 </value></red>
+          <green><value> 0.4 </value></green>
+          <blue><value>  0.4 </value></blue>
           <alpha><value> 0.0 </value></alpha>
         </color>
         <size>
-          <value>2.0</value>
+          <value>15.0</value>
         </size>
       </end>
 
       <life-sec>
-        <value>0.8</value>
+        <value>8</value>
       </life-sec>
-        
+
       <mass-kg>  0.02 </mass-kg>
-      <radius-m> 0.5 </radius-m>
+      <radius-m> 0.2 </radius-m>
     </particle>
 
     <program>
       <fluid>               air  </fluid>
-      <gravity type="bool"> false </gravity>
-      <wind typ="bool">     false </wind>
+      <gravity type="bool"> true </gravity>
+      <wind typ="bool">     true </wind>
     </program>
 
   </particlesystem>

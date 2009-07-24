@@ -6,7 +6,7 @@
 <animation>
   <type>rotate</type>
   <object-name>aiguille</object-name>
-  <property>consumables/fuel/tank[1]/level-ltr</property>
+  <property>instrumentation/fuel-gauges/tank[1]/level-ltr</property>
    <interpolation>
      <entry>
        <ind>-10</ind>

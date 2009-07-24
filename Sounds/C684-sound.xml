@@ -69,6 +69,11 @@
     <min>0.0</min>
     <max>1.0</max>
    </pitch>
+   <position>
+     <x>1.0</x>
+     <y>0.0</y>
+     <z>0.0</z>
+   </position>
   </engine>
 
   <engine>
@@ -95,6 +100,11 @@
     <min>0.0</min>
     <max>1.0</max>
    </pitch>
+   <position>
+     <x>1.0</x>
+     <y>0.0</y>
+     <z>0.0</z>
+   </position>
   </engine>
 
   <rumble>
@@ -175,7 +185,52 @@
     <offset>0.5</offset>
     <max>1.0</max>
    </pitch>
+   <position>
+     <x>3.0</x>
+     <y>0.0</y>
+     <z>0.0</z>
+   </position>
   </wind>
+
+  <click>
+    <name>click on</name>
+    <mode>once</mode>
+    <path>Sounds/click.wav</path>
+    <condition>
+      <property>sim/sound/switch</property>
+    </condition>
+    <max-dist>2</max-dist>
+    <reference-dist>1</reference-dist>
+    <volume>
+      <offset>0.7</offset>
+    </volume>
+    <position>
+     <x>3.25</x>
+     <y>0.0</y>
+     <z>0.2</z>
+   </position>
+  </click>
+
+  <click>
+    <name>click off</name>
+    <mode>once</mode>
+    <path>Sounds/click.wav</path>
+    <condition>
+      <not>
+        <property>sim/sound/switch</property>
+      </not>
+    </condition>
+    <max-dist>2</max-dist>
+    <reference-dist>1</reference-dist>
+    <volume>
+      <offset>0.7</offset>
+    </volume>
+    <position>
+     <x>3.25</x>
+     <y>0.0</y>
+     <z>0.2</z>
+   </position>
+  </click>
 
 </fx>
  

@@ -1,6 +1,7 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
-MATERIAL "Material" rgb 0.166773 0.166773 0.166773 amb 0.5 0.5 0.5 emis 0 0 0 spec 0.262467 0.262467 0.262467 shi 32 trans 0
+MATERIAL "Material.001" rgb 1 1 1 amb 1 1 1 emis 0 0 0 spec 0.798352 0.798352 0.798352 shi 32 trans 0
+MATERIAL "Material" rgb 0.166773 0.166773 0.166773 amb 0.160394 0.160394 0.160394 emis 0 0 0 spec 0.154014 0.154014 0.154014 shi 32 trans 0
 OBJECT world
 kids 3
 OBJECT poly
@@ -15,7 +16,7 @@ numvert 4
 0.000846 0.026325 0.000897
 numsurf 1
 SURF 0x20
-mat 0
+mat 1
 refs 4
 0 0 0
 3 0 0
@@ -93,378 +94,378 @@ numvert 63
 -0.000203 0.021213 -0.021213
 numsurf 56
 SURF 0x20
-mat 1
+mat 2
 refs 4
 1 0 0
 0 0 0
 16 0 0
 17 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 2 0 0
 1 0 0
 17 0 0
 18 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 4 0 0
 3 0 0
 19 0 0
 20 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 5 0 0
 4 0 0
 20 0 0
 21 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 6 0 0
 5 0 0
 21 0 0
 22 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 7 0 0
 6 0 0
 22 0 0
 23 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 8 0 0
 7 0 0
 23 0 0
 24 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 9 0 0
 8 0 0
 24 0 0
 25 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 11 0 0
 10 0 0
 26 0 0
 27 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 12 0 0
 11 0 0
 27 0 0
 28 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 13 0 0
 12 0 0
 28 0 0
 29 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 14 0 0
 13 0 0
 29 0 0
 30 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 15 0 0
 14 0 0
 30 0 0
 31 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 16 0 0
 0 0 0
 15 0 0
 31 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 3
 32 0 0
 3 0 0
 2 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 3
 18 0 0
 32 0 0
 2 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 3
 32 0 0
 19 0 0
 3 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 3
 33 0 0
 10 0 0
 9 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 3
 25 0 0
 33 0 0
 9 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 3
 33 0 0
 26 0 0
 10 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 3
 20 0 0
 19 0 0
 34 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 3
 21 0 0
 20 0 0
 34 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 3
 22 0 0
 21 0 0
 34 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 3
 23 0 0
 22 0 0
 34 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 3
 24 0 0
 23 0 0
 34 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 3
 25 0 0
 24 0 0
 34 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 3
 19 0 0
 32 0 0
 34 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 3
 33 0 0
 25 0 0
 34 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 34 0 0
 32 0 0
 37 0 0
 35 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 33 0 0
 34 0 0
 35 0 0
 36 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 26 0 0
 33 0 0
 36 0 0
 43 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 32 0 0
 18 0 0
 44 0 0
 37 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 31 0 0
 38 0 0
 46 0 0
 16 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 31 0 0
 30 0 0
 39 0 0
 38 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 30 0 0
 29 0 0
 40 0 0
 39 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 29 0 0
 28 0 0
 41 0 0
 40 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 28 0 0
 27 0 0
 42 0 0
 41 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 27 0 0
 26 0 0
 43 0 0
 42 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 18 0 0
 17 0 0
 45 0 0
 44 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 17 0 0
 16 0 0
 46 0 0
 45 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 0 0 0
 62 0 0
 47 0 0
 15 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 14 0 0
 15 0 0
 47 0 0
 48 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 13 0 0
 14 0 0
 48 0 0
 49 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 12 0 0
 13 0 0
 49 0 0
 50 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 11 0 0
 12 0 0
 50 0 0
 51 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 10 0 0
 11 0 0
 51 0 0
 52 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 9 0 0
 10 0 0
 52 0 0
 53 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 8 0 0
 9 0 0
 53 0 0
 54 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 7 0 0
 8 0 0
 54 0 0
 55 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 6 0 0
 7 0 0
 55 0 0
 56 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 5 0 0
 6 0 0
 56 0 0
 57 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 4 0 0
 5 0 0
 57 0 0
 58 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 3 0 0
 4 0 0
 58 0 0
 59 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 2 0 0
 3 0 0
 59 0 0
 60 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 1 0 0
 2 0 0
 60 0 0
 61 0 0
 SURF 0x20
-mat 1
+mat 2
 refs 4
 0 0 0
 1 0 0
@@ -498,97 +499,97 @@ numvert 17
 0 0 0
 numsurf 16
 SURF 0x00
-mat 0
+mat 1
 refs 3
 1 0.98531293869 0.70102339983
 0 0.871442437172 0.871442675591
 16 0.5 0.500000059605
 SURF 0x00
-mat 0
+mat 1
 refs 3
 2 1.02529931068 0.5
 1 0.98531293869 0.70102339983
 16 0.5 0.500000059605
 SURF 0x00
-mat 0
+mat 1
 refs 3
 3 0.98531293869 0.298976659775
 2 1.02529931068 0.5
 16 0.5 0.500000059605
 SURF 0x00
-mat 0
+mat 1
 refs 3
 4 0.871442437172 0.1285572052
 3 0.98531293869 0.298976659775
 16 0.5 0.500000059605
 SURF 0x00
-mat 0
+mat 1
 refs 3
 5 0.701023221016 0.0146867632866
 4 0.871442437172 0.1285572052
 16 0.5 0.500000059605
 SURF 0x00
-mat 0
+mat 1
 refs 3
 6 0.499999970198 -0.0252993106842
 5 0.701023221016 0.0146867632866
 16 0.5 0.500000059605
 SURF 0x00
-mat 0
+mat 1
 refs 3
 7 0.298976659775 0.0146868228912
 6 0.499999970198 -0.0252993106842
 16 0.5 0.500000059605
 SURF 0x00
-mat 0
+mat 1
 refs 3
 8 0.128557354212 0.128557264805
 7 0.298976659775 0.0146868228912
 16 0.5 0.500000059605
 SURF 0x00
-mat 0
+mat 1
 refs 3
 9 0.014686614275 0.298976659775
 8 0.128557354212 0.128557264805
 16 0.5 0.500000059605
 SURF 0x00
-mat 0
+mat 1
 refs 3
 10 -0.0252993106842 0.500000119209
 9 0.014686614275 0.298976659775
 16 0.5 0.500000059605
 SURF 0x00
-mat 0
+mat 1
 refs 3
 11 0.0146866738796 0.701023638248
 10 -0.0252993106842 0.500000119209
 16 0.5 0.500000059605
 SURF 0x00
-mat 0
+mat 1
 refs 3
 12 0.128557413816 0.871443092823
 11 0.0146866738796 0.701023638248
 16 0.5 0.500000059605
 SURF 0x00
-mat 0
+mat 1
 refs 3
 13 0.298976927996 0.985313594341
 12 0.128557413816 0.871443092823
 16 0.5 0.500000059605
 SURF 0x00
-mat 0
+mat 1
 refs 3
 14 0.500000298023 1.02529931068
 13 0.298976927996 0.985313594341
 16 0.5 0.500000059605
 SURF 0x00
-mat 0
+mat 1
 refs 3
 15 0.701023697853 0.985313177109
 14 0.500000298023 1.02529931068
 16 0.5 0.500000059605
 SURF 0x00
-mat 0
+mat 1
 refs 3
 0 0.871442437172 0.871442675591
 15 0.701023697853 0.985313177109

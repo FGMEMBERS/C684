@@ -1,0 +1,119 @@
+<PropertyList>
+
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>100</max-m>
+  </animation>
+
+  <model>
+    <path>Aircraft/C684/Models/Cockpit/throttle.xml</path>
+    <offsets>
+      <x-m>  0.220 </x-m>
+      <y-m> -0.330 </y-m>
+      <z-m> -0.070 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Cockpit/trim.xml</path>
+    <offsets>
+      <x-m>  0.220 </x-m>
+      <y-m>  0.330 </y-m>
+      <z-m> -0.070 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Cockpit/mixture.xml</path>
+    <offsets>
+      <x-m>  0.055 </x-m>
+      <y-m> -0.290 </y-m>
+      <z-m> -0.005 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- Text -->
+
+  <model>
+    <path>Aircraft/C684/Models/Cockpit/Text/battery.ac</path>
+    <offsets>
+      <x-m>  0.067 </x-m>
+      <y-m> -0.265 </y-m>
+      <z-m>  0.045 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Cockpit/Text/starter.ac</path>
+    <offsets>
+      <x-m>  0.067 </x-m>
+      <y-m> -0.225 </y-m>
+      <z-m>  0.045 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Cockpit/Text/pitch.ac</path>
+    <offsets>
+      <x-m>  0.067 </x-m>
+      <y-m> -0.220 </y-m>
+      <z-m>  0.115 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Cockpit/Text/shpitch.ac</path>
+    <offsets>
+      <x-m>  0.067 </x-m>
+      <y-m> -0.293 </y-m>
+      <z-m>  0.100 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Cockpit/Text/hpitch.ac</path>
+    <offsets>
+      <x-m>  0.067 </x-m>
+      <y-m> -0.280 </y-m>
+      <z-m>  0.115 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Cockpit/Text/lpitch.ac</path>
+    <offsets>
+      <x-m>  0.067 </x-m>
+      <y-m> -0.280 </y-m>
+      <z-m>  0.085 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

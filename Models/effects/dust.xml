@@ -26,7 +26,7 @@
     <attach>world</attach>
 
     <placer>
-      <type>point</type> 
+      <type>point</type>
     </placer>
 
     <shooter>
@@ -39,20 +39,20 @@
         <spread>20</spread>
       </speed-mps>
       <rotation-speed>
-        <x-min-deg-sec>40</x-min-deg-sec>
-        <y-min-deg-sec>40</y-min-deg-sec>
-        <z-min-deg-sec>40</z-min-deg-sec>
-        <x-max-deg-sec>40</x-max-deg-sec>
-        <y-max-deg-sec>40</y-max-deg-sec>
-        <z-max-deg-sec>40</z-max-deg-sec>
+        <x-min-deg-sec>0</x-min-deg-sec>
+        <y-min-deg-sec>0</y-min-deg-sec>
+        <z-min-deg-sec>0</z-min-deg-sec>
+        <x-max-deg-sec>0</x-max-deg-sec>
+        <y-max-deg-sec>0</y-max-deg-sec>
+        <z-max-deg-sec>0</z-max-deg-sec>
       </rotation-speed>
     </shooter>
 
     <counter>
       <particles-per-sec>
         <property>velocities/uBody-fps</property>
-        <factor>1</factor>
-        <offset>0.02</offset>
+        <factor>0.2</factor>
+        <offset>3</offset>
         <spread>30</spread>
       </particles-per-sec>
     </counter>
@@ -63,7 +63,7 @@
           <red><value>   0.50 </value></red>
           <green><value> 0.40 </value></green>
           <blue><value>  0.30 </value></blue>
-          <alpha><value> 0.15 </value></alpha>
+          <alpha><value> 0.6 </value></alpha>
         </color>
         <size>
           <value>0.1</value>
@@ -85,7 +85,7 @@
       <life-sec>
         <value>0.6</value>
       </life-sec>
-        
+
       <mass-kg>  0.02 </mass-kg>
       <radius-m> 0.5 </radius-m>
     </particle>
@@ -93,7 +93,7 @@
     <program>
       <fluid>               air  </fluid>
       <gravity type="bool"> false </gravity>
-      <wind typ="bool">     false </wind>
+      <wind typ="bool">     true </wind>
     </program>
 
   </particlesystem>

@@ -1,7 +1,9 @@
-Caudron C.684 version 0.3.0
-FDM: JSBSim
+Caudron C.684 version 0.4.9
 This Aircraft is licensed under the GNU General Public License version 2 or above. See COPYING for more infomation.
 
-TODO:
-- FDM improvements (altough the stall behaviour is now more realistic)
-- better 3D cockpit
+Thanks to Laurent HAYVEL for his texture
+FDM: JSBSim
+
+Documentation:
+- http://www.aviafrance.com/aviafrance1.php?ID=9849
+- http://inter.action.free.fr/images/dessineux/caudron3vues-couleurs-.jpg

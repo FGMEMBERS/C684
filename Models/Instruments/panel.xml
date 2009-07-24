@@ -1,16 +1,8 @@
 <?xml version="1.0"?>
 
-<!--
-TODO
-- jauges d'essence
-- interieur cockpit, bois, etc
-- interrupteur essence
-- demarreur
--->
-
 <PropertyList>
 
-<!-- no need to load the panel in MP if the plane is at more than 150 m -->
+<!-- no need to load the panel in MP if the plane is at more than 100 m -->
   <animation>
     <type>range</type>
     <min-m>0</min-m>
@@ -219,6 +211,44 @@ TODO
       <x-m>  0.000 </x-m>
       <y-m>  0.100 </y-m>
       <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- Pitch switches -->
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/apply_pitch-switch.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.240 </y-m>
+      <z-m>  0.100 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/pitch-lamp.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.240 </y-m>
+      <z-m>  0.080 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/select_pitch-switch.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.268 </y-m>
+      <z-m>  0.100 </z-m>
       <roll-deg>    0.000 </roll-deg>
       <pitch-deg>   0.000 </pitch-deg>
       <heading-deg> 0.000 </heading-deg>

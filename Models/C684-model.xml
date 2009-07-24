@@ -31,6 +31,18 @@
     </offsets>
   </model>
 
+  <model>
+    <path>Aircraft/C684/Models/Cockpit/cockpit.xml</path>
+    <offsets>
+      <x-m>  3.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.000 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
 <!-- Effets chrome -->
   <animation>
     <type>shader</type>
@@ -62,7 +74,10 @@
 
   <model>
     <condition>
-      <property>gear/gear[0]/wow</property>
+	  <and>
+        <property>gear/gear[0]/wow</property>
+		<property>sim/model/tire-smoke</property>
+	  </and>
     </condition>
     <path>Aircraft/C684/Models/effects/dust.xml</path>
     <offsets>
@@ -77,7 +92,10 @@
 
   <model>
     <condition>
-      <property>gear/gear[1]/wow</property>
+      <and>
+        <property>gear/gear[1]/wow</property>
+		<property>sim/model/tire-smoke</property>
+	  </and>
     </condition>
     <path>Aircraft/C684/Models/effects/dust.xml</path>
     <offsets>
@@ -296,14 +314,14 @@
     <center>
       <x-m>3.28</x-m>
       <y-m>0.00</y-m>
-      <z-m>-0.58</z-m>
+      <z-m>-0.53</z-m>
     </center>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>manche</object-name>
-    <property>surface-positions/right-aileron-pos-norm</property>
+    <property>controls/flight/aileron</property>
     <factor>25</factor>
     <axis>
       <x>-1.0</x>
@@ -313,7 +331,7 @@
     <center>
       <x-m>3.28</x-m>
       <y-m>0.00</y-m>
-      <z-m>-0.58</z-m>
+      <z-m>-0.53</z-m>
     </center>
   </animation>
 
@@ -331,10 +349,10 @@
     <center>
       <x-m>2.87</x-m>
       <y-m>0.00</y-m>
-      <z-m>-0.57</z-m>
+      <z-m>-0.527</z-m>
     </center>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>paloD</object-name>
@@ -348,7 +366,108 @@
     <center>
       <x-m>2.87</x-m>
       <y-m>0.00</y-m>
-      <z-m>-0.57</z-m>
+      <z-m>-0.527</z-m>
+    </center>
+  </animation>
+
+<!-- cables -->
+  <animation>
+    <type>translate</type>
+    <object-name>cablePaloG</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>0.025</factor>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.03</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>cablePaloD</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>-0.025</factor>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.03</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>cableProf1</object-name>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor>-0.030</factor>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.07</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>cableProf1</object-name>
+    <property>controls/flight/aileron</property>
+    <factor>-1.00</factor>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+    <center>
+      <x-m>4.60</x-m>
+      <y-m>0.00</y-m>
+      <z-m>0.00</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>cableAileronD</object-name>
+    <object-name>cableAileronG</object-name>
+    <property>controls/flight/aileron</property>
+    <factor>0.030</factor>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>cableAileronG</object-name>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor>6.00</factor>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+    <center>
+      <x-m>3.28</x-m>
+      <y-m>-0.30</y-m>
+      <z-m>0.00</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>cableAileronD</object-name>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor>-6.00</factor>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+    <center>
+      <x-m>3.28</x-m>
+      <y-m>0.30</y-m>
+      <z-m>0.00</z-m>
     </center>
   </animation>
 
@@ -383,8 +502,24 @@
   <animation>
     <type>spin</type>
     <object-name>roueG</object-name>
+    <property>gear/gear[0]/rollspeed-ms</property>
+    <factor>-10</factor>
+    <center>
+      <x-m>2.111</x-m>
+      <y-m>0</y-m>
+      <z-m>-1.112</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+ </animation>
+
+   <animation>
+    <type>spin</type>
     <object-name>roueD</object-name>
-    <property>velocities/uBody-fps</property>
+    <property>gear/gear[1]/rollspeed-ms</property>
     <factor>-10</factor>
     <center>
       <x-m>2.111</x-m>
