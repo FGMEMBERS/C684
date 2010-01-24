@@ -7,8 +7,11 @@
 <animation>
   <type>rotate</type>
   <object-name>trim</object-name>
+  <object-name>centre</object-name>
+  <object-name>poignee</object-name>
+  <object-name>centre2</object-name>
   <property>controls/flight/elevator-trim</property>
-  <factor>8000</factor>
+  <factor>3000</factor>
   <axis>
     <x>0</x>
     <y>-1</y>

@@ -11,11 +11,11 @@
   <interpolation>
     <entry>
       <ind>0</ind>
-      <dep>30</dep>
+      <dep>-10</dep>
     </entry>
     <entry>
       <ind>1</ind>
-      <dep>140</dep>
+      <dep>120</dep>
     </entry>
   </interpolation>
   <axis>

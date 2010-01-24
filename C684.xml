@@ -7,14 +7,14 @@
   <fileheader>
     <author> Guillaume Chauvat, Laurent Hayvel (texture) </author>
     <filecreationdate> 2008-08-27 </filecreationdate>
-    <version> 0.4.9 </version>
+    <version> 0.4.11 </version>
     <description>Caudron C684</description>
   </fileheader>
 
   <metrics>
     <wingarea  unit="M2">   9.00 </wingarea>
     <wingspan  unit="M" >   7.70 </wingspan>
-    <wing_incidence>        1.30 </wing_incidence>
+    <wing_incidence>        0.043</wing_incidence> <!-- radians -->
     <chord     unit="M" >   1.17 </chord> <!-- mean chord -->
     <htailarea unit="M2">   2.00 </htailarea>
     <htailarm  unit="M" >   3.80 </htailarm>
@@ -136,7 +136,7 @@
       <brake_group>NONE</brake_group>
       <retractable>FIXED</retractable>
     </contact>
-
+<!--
     <contact type="BOGEY" name="LEFT_TIP">
       <location unit="M">
         <x>  2.35 </x>
@@ -168,8 +168,33 @@
       <brake_group>NONE</brake_group>
       <retractable>FIXED</retractable>
     </contact>
+-->
 
-    <contact type="BOGEY" name="NOSE1">
+    <contact type="STRUCTURE" name="LEFT_WING">
+      <location unit="M">
+        <x>  2.35 </x>
+        <y> -3.85 </y>
+        <z> -0.29 </z>
+      </location>
+      <static_friction>  0.80 </static_friction>
+      <dynamic_friction> 0.80 </dynamic_friction>
+      <spring_coeff unit="N/M">      300000.00 </spring_coeff>
+      <damping_coeff unit="N/M/SEC">  10000.00 </damping_coeff>
+    </contact>
+
+    <contact type="STRUCTURE" name="RIGHT_WING">
+      <location unit="M">
+        <x>  2.35 </x>
+        <y>  3.85 </y>
+        <z> -0.29 </z>
+      </location>
+      <static_friction>  0.80 </static_friction>
+      <dynamic_friction> 0.80 </dynamic_friction>
+      <spring_coeff unit="N/M">      300000.00 </spring_coeff>
+      <damping_coeff unit="N/M/SEC">  10000.00 </damping_coeff>
+    </contact>
+
+    <contact type="STRUCTURE" name="NOSE1">
       <location unit="M">
         <x>  1.00 </x>
         <y>  0.00 </y>
@@ -177,15 +202,11 @@
       </location>
       <static_friction>  0.80 </static_friction>
       <dynamic_friction> 0.80 </dynamic_friction>
-      <rolling_friction> 0.80 </rolling_friction>
       <spring_coeff unit="N/M">      300000.00 </spring_coeff>
       <damping_coeff unit="N/M/SEC">  10000.00 </damping_coeff>
-      <max_steer unit="DEG"> 0.00 </max_steer>
-      <brake_group>NONE</brake_group>
-      <retractable>FIXED</retractable>
     </contact>
 
-    <contact type="BOGEY" name="NOSE2">
+    <contact type="STRUCTURE" name="NOSE2">
       <location unit="M">
         <x>  0.00 </x>
         <y>  0.00 </y>
@@ -193,12 +214,20 @@
       </location>
       <static_friction>  0.80 </static_friction>
       <dynamic_friction> 0.80 </dynamic_friction>
-      <rolling_friction> 0.80 </rolling_friction>
       <spring_coeff unit="N/M">      300000.00 </spring_coeff>
       <damping_coeff unit="N/M/SEC">  10000.00 </damping_coeff>
-      <max_steer unit="DEG"> 0.00 </max_steer>
-      <brake_group>NONE</brake_group>
-      <retractable>FIXED</retractable>
+    </contact>
+
+    <contact type="STRUCTURE" name="NOSE3">
+      <location unit="M">
+        <x>  0.57 </x>
+        <y>  0.00 </y>
+        <z> -0.65 </z>
+      </location>
+      <static_friction>  0.80 </static_friction>
+      <dynamic_friction> 0.80 </dynamic_friction>
+      <spring_coeff unit="N/M">      300000.00 </spring_coeff>
+      <damping_coeff unit="N/M/SEC">  10000.00 </damping_coeff>
     </contact>
 
   </ground_reactions>
@@ -240,8 +269,9 @@
         <y> -0.80 </y>
         <z> -0.40 </z>
       </location>
-      <capacity unit="KG"> 80.00 </capacity> <!-- 100 L -->
-      <contents unit="KG"> 70.00 </contents>
+      <capacity unit="KG"> 72.00 </capacity> <!-- 100 L -->
+      <contents unit="KG"> 68.00 </contents>
+      <density unit="KG/L"> 0.72 </density>
     </tank>
 
     <tank type="FUEL" number="1">
@@ -250,8 +280,9 @@
         <y>  0.80 </y>
         <z> -0.40 </z>
       </location>
-      <capacity unit="KG"> 80.80 </capacity>
-      <contents unit="KG"> 70.00 </contents>
+      <capacity unit="KG"> 72.80 </capacity>
+      <contents unit="KG"> 68.00 </contents>
+      <density unit="KG/L"> 0.72 </density>
     </tank>
 
   </propulsion>
@@ -260,7 +291,7 @@
 
     <property>fcs/mixture-failure-cmd-norm</property>
 	<property>propulsion/engine[0]/failure</property>
-	<property>propulsion/engine[0]/rpm-loss</property>
+	<property>propulsion/engine[0]/throttle-factor-pos-norm</property>
 
     <channel name="Pitch">
       <summer name="Pitch Trim Sum">
@@ -463,13 +494,6 @@
     </channel>
 
     <channel name="Engine Failures">
-	<!--
-      <pure_gain name="Mixture Pos Norm">
-        <input>fcs/mixture-corrected-cmd-norm</input>
-        <gain>1</gain>
-        <output>fcs/mixture-pos-norm</output>
-      </pure_gain>
-	  -->
       <switch name="Mixture Pos Norm">
         <default value="fcs/mixture-cmd-norm"/>
         <test value="fcs/mixture-failure-cmd-norm">
@@ -480,10 +504,9 @@
 
 	  <pure_gain name="Throttle Pos Norm">
         <input>fcs/throttle-cmd-norm</input>
-        <gain>propulsion/engine/rpm-loss</gain>
+        <gain>propulsion/engine/throttle-factor-pos-norm</gain>
         <output>fcs/throttle-pos-norm</output>
       </pure_gain>
-
     </channel>
 
   </flight_control>
@@ -547,30 +570,30 @@
         <property>metrics/Sw-sqft</property>
         <property>aero/function/kCLge</property>
         <table>
-          <independentVar lookup="row">aero/alpha-deg</independentVar>
+          <independentVar lookup="row">aero/alpha-wing-rad</independentVar>
           <tableData>
-		-25	-0.505
-		-20	-0.676
-		-17	-1.144
-		-15	-1.225
-		-13	-1.135
-		-10	-0.874
-		-8	-0.685
-		-6	-0.487
-		-4	-0.28
-		-2	-0.082
-		-1	0.017
-		0	0.125
-		2	0.332
-		4	0.53
-		6	0.737
-		8	0.935
-		10	1.124
-		13	1.385
-		15	1.466
-		17	1.277
-		20	0.926
-		25	0.755
+			-0.4363	-0.505
+			-0.3491	-0.676
+			-0.2967	-1.144
+			-0.2792	-1.225
+			-0.2269	-1.135
+			-0.1745	-0.874
+			-0.1396	-0.685
+			-0.1047	-0.487
+			-0.0698	-0.28
+			-0.0349	-0.082
+			-0.0175	0.017
+			0.0000	0.125
+			0.0349	0.332
+			0.0698	0.53
+			0.1047	0.737
+			0.1396	0.935
+			0.1745	1.124
+			0.2269	1.385
+			0.2792	1.466
+			0.2967	1.277
+			0.3491	0.926
+			0.4363	0.755
           </tableData>
         </table>
       </product>
@@ -623,32 +646,32 @@
         <property>aero/qbar-psf</property>
         <property>metrics/Sw-sqft</property>
         <table>
-          <independentVar lookup="row">aero/alpha-deg</independentVar>
+          <independentVar lookup="row">aero/alpha-wing-rad</independentVar>
           <tableData>
-		-90	-1.500
-		-25	0.320
-		-20	0.178
-		-17	0.103
-		-15	0.062
-		-13	0.045
-		-10	0.036
-		-8	0.032
-		-6	0.028
-		-4	0.025
-		-2	0.024
-		-1	0.023
-		0	0.023
-		2	0.024
-		4	0.025
-		6	0.027
-		8	0.029
-		10	0.033
-		13	0.043
-		15	0.060
-		17	0.100
-		20	0.175
-		25	0.320
-		90	1.500
+			-1.5708	-1.500
+			-0.4363	0.320
+			-0.3491	0.150
+			-0.2967	0.080
+			-0.2618	0.057
+			-0.2269	0.045
+			-0.1745	0.036
+			-0.1396	0.032
+			-0.1047	0.028
+			-0.0698	0.025
+			-0.0349	0.024
+			-0.0175	0.023
+			0.0000	0.023
+			0.0349	0.024
+			0.0698	0.025
+			0.1047	0.027
+			0.1396	0.029
+			0.1745	0.033
+			0.2269	0.043
+			0.2618	0.055
+			0.2967	0.080
+			0.3491	0.150
+			0.4363	0.320
+			1.5708	1.500
           </tableData>
         </table>
       </product>
@@ -762,18 +785,16 @@
         <property>aero/beta-rad</property>
         <table>
           <independentVar lookup="row">aero/alpha-deg</independentVar>
-          <independentVar lookup="column">fcs/flap-pos-deg</independentVar>
           <tableData>
-                        0          65
-             -40.0     -0.250     -0.250
-             -22.0     -0.200     -0.200
-             -16.0     -0.100     -0.120
-             -14.0     -0.090     -0.100
-               0.0     -0.080     -0.080
-              14.0     -0.090     -0.100
-              16.0     -0.100     -0.120
-              22.0     -0.400     -0.400
-              40.0     -0.500     -0.500
+             -40.0     -0.250
+             -22.0     -0.200
+             -16.0     -0.150
+             -14.0     -0.110
+               0.0     -0.080
+              14.0     -0.110
+              16.0     -0.150
+              22.0     -0.200
+              40.0     -0.250
           </tableData>
         </table>
       </product>
@@ -791,16 +812,18 @@
           <independentVar lookup="row">aero/alpha-deg</independentVar>
 		  <independentVar lookup="column">velocities/p-aero-rad_sec</independentVar>
           <tableData>
-					-1.0	0.0		1.0
-             -40.0	-0.30	0.10	-0.30  <!-- |                  -->
-             -22.0	-0.20	0.15	-0.20  <!-- | Asymmetric stall -->
-             -18.0	-0.10	0.00	-0.10  <!-- |                  -->
-             -16.0	-0.30	-0.30	-0.30
+					-10.0	0.0		10.0
+             -40.0	-0.20  -0.10	-0.20  <!-- |                  -->
+             -22.0	-0.10	0.30	-0.10  <!-- | Asymmetric stall -->
+             -18.0	-0.05	0.20	-0.05  <!-- |                  -->
+             -16.0	-0.40	-0.05	-0.40
+             -14.0	-0.43	-0.35	-0.43
                0.0	-0.45	-0.45	-0.45
-              16.0	-0.30	-0.30	-0.30
-              18.0	-0.10	0.00	-0.10  <!-- |                  -->
-              22.0	-0.20	0.15	-0.20  <!-- | Asymmetric stall -->
-              40.0	-0.30	0.10	-0.30  <!-- |                  -->
+              14.0	-0.43	-0.35	-0.43
+              16.0	-0.40	-0.05	-0.40
+              18.0	-0.05	0.20	-0.05  <!-- |                  -->
+              22.0	-0.10	0.30	-0.10  <!-- | Asymmetric stall -->
+              40.0	-0.20  -0.10	-0.20  <!-- |                  -->
           </tableData>
         </table>
       </product>
@@ -814,7 +837,7 @@
         <property>metrics/bw-ft</property>
         <property>aero/bi2vel</property>
         <property>velocities/r-aero-rad_sec</property>
-        <value>0.15</value>
+        <value>0.20</value>
       </product>
     </function>
 
@@ -828,7 +851,7 @@
           <independentVar lookup="row">fcs/left-aileron-pos-rad</independentVar>
           <tableData>
           	-0.349	-0.349
-          	0		-0.015  <!-- avoid engine effects in cruise -->
+          	0		-0.011  <!-- avoid engine effects in cruise -->
           	0.26175	0.26175
           </tableData>
         </table>
@@ -836,13 +859,13 @@
           <independentVar lookup="row">aero/alpha-deg</independentVar>
           <tableData>
              -40.0      0.00
-             -25.0      0.00
-             -20.0      0.08
-             -16.0      0.13
-               0.0      0.15
-              16.0      0.13
-              20.0      0.08
-              25.0      0.00  <!-- aileron has no roll effect when wing is stalled (?) -->
+             -18.0      0.00
+             -15.0      0.09
+             -13.0      0.11
+               0.0      0.12
+              13.0      0.11
+              15.0      0.09
+              18.0      0.00
               40.0      0.00
           </tableData>
         </table>
@@ -864,14 +887,24 @@
 
   <axis name="PITCH">
 
+    <function name="aero/coefficient/Cmo">
+      <description>Pitching_moment_at_zero_alpha</description>
+      <product>
+        <property>aero/qbar-psf</property>
+        <property>metrics/Sw-sqft</property>
+        <property>metrics/cbarw-ft</property>
+        <value>0.0</value>
+      </product>
+    </function>
+
     <function name="aero/coefficient/Cmalpha">
       <description>Pitch_moment_due_to_alpha</description>
       <product>
         <property>aero/qbar-psf</property>
         <property>metrics/Sw-sqft</property>
         <property>metrics/cbarw-ft</property>
-        <property>aero/alpha-rad</property>
-        <value>-1.8</value>
+        <property>aero/alpha-wing-rad</property>
+        <value>-2.5</value>
       </product>
     </function>
 
@@ -885,8 +918,8 @@
           <independentVar lookup="row">fcs/flap-pos-deg</independentVar>
           <tableData>
              0   0.000
-            25  -0.056
-            65  -0.080
+            25  -0.090
+            65  -0.140
           </tableData>
         </table>
       </product>
@@ -899,7 +932,7 @@
         <property>metrics/Sw-sqft</property>
         <property>metrics/cbarw-ft</property>
         <property>fcs/elevator-pos-rad</property>
-        <value>-1.5</value>
+        <value>-1.3</value>
       </product>
     </function>
 
@@ -938,7 +971,7 @@
         <property>metrics/Sw-sqft</property>
         <property>metrics/bw-ft</property>
         <property>aero/beta-rad</property>
-        <value>0.17</value>
+        <value>0.18</value>
       </product>
     </function>
 
@@ -950,7 +983,7 @@
         <property>metrics/bw-ft</property>
         <property>aero/bi2vel</property>
         <property>velocities/r-aero-rad_sec</property>
-        <value>-0.15</value>
+        <value>-0.12</value>
       </product>
     </function>
 
@@ -961,7 +994,7 @@
         <property>metrics/Sw-sqft</property>
         <property>metrics/bw-ft</property>
         <property>fcs/rudder-pos-rad</property>
-        <value>-0.08</value>
+        <value>-0.065</value>
       </product>
     </function>
 
@@ -972,18 +1005,8 @@
         <property>metrics/Sw-sqft</property>
         <property>metrics/bw-ft</property>
         <property>fcs/left-aileron-pos-rad</property>
-        <table>
-          <independentVar lookup="row">aero/alpha-deg</independentVar>
-          <tableData>
-             -40.0      0.015
-             -20.0      0.010
-             -16.0      0.006
-               0.0      0.004
-              16.0      0.006
-              20.0      0.010
-              40.0      0.015
-          </tableData>
-        </table>
+        <property>aero/alpha-wing-rad</property>
+        <value>-0.025</value>
       </product>
     </function>
 
