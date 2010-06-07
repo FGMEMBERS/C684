@@ -97,3 +97,13 @@ var autostart = func{
 	}
 	settimer(autostart, 1);
 }
+
+#########
+# Flaps #
+#########
+
+controls.flapsDown = func(n) {
+	if (n == 1) setprop("/fdm/jsbsim/fcs/flap-cmd-in", 1);
+	if (n == 0) setprop("/fdm/jsbsim/fcs/flap-cmd-in", 0);
+	if (n == -1) setprop("/fdm/jsbsim/fcs/flap-cmd-in", -1);
+}

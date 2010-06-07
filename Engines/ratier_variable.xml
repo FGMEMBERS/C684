@@ -4,8 +4,8 @@
   <ixx> 1.9 </ixx>
   <diameter unit="M"> 2.0 </diameter>
   <numblades>           2 </numblades>
-  <minpitch>           19 </minpitch>
-  <maxpitch>           23 </maxpitch>
+  <minpitch>           20 </minpitch>
+  <maxpitch>           26 </maxpitch>
   <gearratio>         1.0 </gearratio>
 
   <table name="C_THRUST" type="internal">

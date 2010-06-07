@@ -17,8 +17,8 @@ var oilTemp = func {
 ####################
 
 var max_oil_temp = 145;
-var rpm_limit = 2800;
-var max_normal_rpm = 2500;
+var rpm_limit = 2700;
+var max_normal_rpm = 2450;
 var max_overrpm = 500;
 var overrpm = 0;
 var neg_g_fuel_factor = 0;
@@ -65,8 +65,7 @@ var engineControl = func {
 		setprop("/fdm/jsbsim/propulsion/engine/throttle-factor-pos-norm", 0);
 	}
 	elsif (rpm > rpm_limit) engineFailure();
-	elsif (rpm > max_normal_rpm) overrpm = overrpm + (rpm - max_normal_rpm) * 0.08;
-	elsif (overrpm > 0) overrpm += -math.ln(max_normal_rpm + 1) * 0.5;
+	elsif (overrpm > 0) overrpm = overrpm + (rpm - max_normal_rpm) * 0.08;
 	if (overrpm > max_overrpm) engineFailure();
 	#print(overrpm);
 };

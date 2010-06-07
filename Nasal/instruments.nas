@@ -42,6 +42,9 @@ var gal2ltr1 = func {
 	}
 }
 
+setlistener("/instrumentation/fuel-gauges/tank[0]/serviceable", gal2ltr0);
+setlistener("/instrumentation/fuel-gauges/tank[1]/serviceable", gal2ltr1);
+
 setlistener("/sim/signals/fdm-initialized", func {
 	gal2ltr0;
 	gal2ltr1;
@@ -50,6 +53,3 @@ setlistener("/sim/signals/reinit", func {
 	gal2ltr0;
 	gal2ltr1;
 });
-setlistener("/instrumentation/fuel-gauges/tank[0]/serviceable", gal2ltr0);
-setlistener("/instrumentation/fuel-gauges/tank[1]/serviceable", gal2ltr1);
-

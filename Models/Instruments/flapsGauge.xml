@@ -2,19 +2,15 @@
 
 <PropertyList>
 
-<path>trim.ac</path>
-
+<path>flapsGauge.ac</path>
 <animation>
   <type>rotate</type>
-  <object-name>trim</object-name>
-  <object-name>centre</object-name>
-  <object-name>poignee</object-name>
-  <object-name>centre2</object-name>
+  <object-name>needle</object-name>
   <property>surface-positions/flap-pos-norm</property>
-  <factor>10000</factor>
+  <factor>240</factor>
   <axis>
-    <x>0</x>
-    <y>-1</y>
+    <x>-1</x>
+    <y>0</y>
     <z>0</z>
   </axis>
   <center>

@@ -44,6 +44,7 @@
   </model>
 
 <!-- Effets chrome -->
+<!--
   <animation>
     <type>shader</type>
     <shader>chrome</shader>
@@ -58,10 +59,46 @@
     <texture>chrome2.png</texture>
     <object-name>verriere</object-name>
   </animation>
+-->
+
+  <effect>
+  	<inherits-from>Aircraft/C684/Models/Effects/C684reflect</inherits-from>
+  	<object-name>capot</object-name>
+  	<object-name>fuselage</object-name>
+  	<object-name>ailes</object-name>
+  	<object-name>aileronG</object-name>
+  	<object-name>aileronD</object-name>
+  	<object-name>gouvProfG</object-name>
+  	<object-name>gouvProfD</object-name>
+  	<object-name>gouvDir</object-name>
+  	<object-name>carenageG</object-name>
+  	<object-name>carenageD</object-name>
+  	<object-name>hstab</object-name>
+  	<object-name>voletG</object-name>
+  	<object-name>voletD</object-name>
+  	<object-name>cone</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/C684/Models/Effects/glassReflect</inherits-from>
+    <object-name>verriere0</object-name>
+  	<object-name>verriere1L</object-name>
+  	<object-name>verriere1T</object-name>
+  	<object-name>verriere1R</object-name>
+  	<object-name>verriere2L</object-name>
+  	<object-name>verriere2T</object-name>
+  	<object-name>verriere2L</object-name>
+  </effect>
+
+  <effect>
+  	<inherits-from>Aircraft/C684/Models/Effects/metalReflect1</inherits-from>
+  	<object-name>pale1</object-name>
+  	<object-name>pale2</object-name>
+  </effect>
 
 <!-- fumée et poussière -->
   <model>
-    <path>Aircraft/C684/Models/effects/smoke.xml</path>
+    <path>Aircraft/C684/Models/Effects/smoke.xml</path>
     <offsets>
       <x-m>  0.90 </x-m>
       <y-m>  0.35 </y-m>
@@ -79,7 +116,7 @@
 		<property>sim/model/tire-smoke</property>
 	  </and>
     </condition>
-    <path>Aircraft/C684/Models/effects/dust.xml</path>
+    <path>Aircraft/C684/Models/Effects/dust.xml</path>
     <offsets>
       <x-m>  2.25 </x-m>
       <y-m> -0.90 </y-m>
@@ -97,7 +134,7 @@
 		<property>sim/model/tire-smoke</property>
 	  </and>
     </condition>
-    <path>Aircraft/C684/Models/effects/dust.xml</path>
+    <path>Aircraft/C684/Models/Effects/dust.xml</path>
     <offsets>
       <x-m>  2.25 </x-m>
       <y-m>  0.90 </y-m>
@@ -235,6 +272,26 @@
   </animation>
 
 <!-- profondeur -->
+
+  <animation>
+    <type>rotate</type>
+    <object-name>gouvProfG</object-name>
+    <object-name>gouvProfD</object-name>
+    <object-name>hstab</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor>-3.5</factor>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+    <center>
+      <x-m>6.30</x-m>
+      <y-m>0.00</y-m>
+      <z-m>0.07</z-m>
+    </center>
+  </animation>
+
   <animation>
     <type>rotate</type>
     <object-name>gouvProfG</object-name>
@@ -274,7 +331,7 @@
     <type>rotate</type>
     <object-name>voletG</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor>-65</factor>
+    <factor>-45</factor>
     <axis>
       <x1-m>2.93</x1-m>
       <y1-m>-0.39</y1-m>
@@ -289,7 +346,7 @@
     <type>rotate</type>
     <object-name>voletD</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor>65</factor>
+    <factor>45</factor>
     <axis>
       <x1-m>2.93</x1-m>
       <y1-m>0.39</y1-m>
@@ -534,6 +591,7 @@
  </animation>
 
 <!-- verriere -->
+<!--
   <animation>
     <type>select</type>
     <object-name>verriere</object-name>
@@ -543,6 +601,43 @@
         <value>0</value>
       </not-equals>
     </condition>
+  </animation>
+-->
+
+  <animation>
+    <type>rotate</type>
+    <object-name>verriere1L</object-name>
+    <object-name>door1L</object-name>
+    <property>surface-positions/doors/door1L/position-norm</property>
+    <factor>37</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>3.500</x-m>
+      <y-m>0.279</y-m>
+      <z-m>0.092</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>verriere1R</object-name>
+    <object-name>door1R</object-name>
+    <property>surface-positions/doors/door1R/position-norm</property>
+    <factor>-37</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>3.500</x-m>
+      <y-m>-0.279</y-m>
+      <z-m>0.092</z-m>
+    </center>
   </animation>
 
 </PropertyList>

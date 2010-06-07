@@ -14,7 +14,7 @@
 <piston_engine name="Renault 6Pfi">
   <!--<minmp unit="INHG">       6.0 </minmp>--><!-- Deprecated -->
   <!--<maxmp unit="INHG">      29.9 </maxmp>--><!-- Deprecated -->
-  <!--<displacement unit="LTR"> 9.0 </displacement>-->
+  <displacement unit="LTR"> 8.0 </displacement>
   <cylinders>               6.0 </cylinders>
   <bore unit="M">          0.12 </bore>
   <stroke unit="M">        0.14 </stroke>
@@ -22,7 +22,7 @@
   <maxhp>                170.00 </maxhp><!-- Deprecated -->
   <cycles>                  4.0 </cycles>
   <idlerpm>               500.0 </idlerpm>
-  <maxrpm>               2500.0 </maxrpm>
+  <maxrpm>               2400.0 </maxrpm>
   <maxthrottle>             1.0 </maxthrottle>
   <minthrottle>             0.1 </minthrottle>
   <sparkfaildrop>          0.15 </sparkfaildrop>
