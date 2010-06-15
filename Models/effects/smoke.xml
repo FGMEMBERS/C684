@@ -43,21 +43,21 @@
         <spread>3</spread>
       </speed-mps>
       <rotation-speed>
-        <x-min-deg-sec>-30</x-min-deg-sec>
-        <y-min-deg-sec>-30</y-min-deg-sec>
-        <z-min-deg-sec>-30</z-min-deg-sec>
-        <x-max-deg-sec>30</x-max-deg-sec>
-        <y-max-deg-sec>30</y-max-deg-sec>
-        <z-max-deg-sec>30</z-max-deg-sec>
+        <x-min-deg-sec>0</x-min-deg-sec>
+        <y-min-deg-sec>0</y-min-deg-sec>
+        <z-min-deg-sec>0</z-min-deg-sec>
+        <x-max-deg-sec>0</x-max-deg-sec>
+        <y-max-deg-sec>0</y-max-deg-sec>
+        <z-max-deg-sec>0</z-max-deg-sec>
       </rotation-speed>
     </shooter>
 
     <counter>
       <particles-per-sec>
         <property>controls/engines/engine[0]/faults/smoke</property>
-        <factor>20</factor>
+        <factor>7</factor>
         <offset>0</offset>
-        <spread>9</spread>
+        <spread>4</spread>
       </particles-per-sec>
     </counter>
 
@@ -87,7 +87,7 @@
       </end>
 
       <life-sec>
-        <value>8</value>
+        <value>5</value>
       </life-sec>
 
       <mass-kg>  0.02 </mass-kg>
