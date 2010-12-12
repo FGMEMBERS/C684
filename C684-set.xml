@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 
 <PropertyList>
-
+  
 <sim>
   <description>Caudron C.684 Super Rafale</description>
   <author>Guillaume Chauvat, Laurent Hayvel (texture)</author>
-  <status>beta (0.4.12)</status>
+  <status>early-production (0.4.13)</status>
   <help>
     <key>
       <name>g</name>
@@ -31,6 +31,7 @@
     <line>  Pitch: selected</line>
     <line>  Apply pitch: on</line>
     <line>  When the light goes out: Apply pitch: off</line>
+    <line></line>
     <line>Startup:</line>
     <line>  Battery: on</line>
     <line>  Magnetos: both</line>
@@ -52,7 +53,7 @@
     <line>  Climb at 200 km/h</line>
     <line></line>
     <line>Climb:</line>
-    <line>  2400 rpm</line>
+    <line>  Full power</line>
     <line>  Low pitch</line>
     <line>  150 km/h</line>
     <line></line>
@@ -80,19 +81,19 @@
     <line>  Battery: off</line>
     <line>  Pitch: Low</line>
   </help>
-
+  
   <model>
     <path>Aircraft/C684/Models/C684-model.xml</path>
-	<tire-smoke type="bool">balse</tire-smoke>
+    <tire-smoke type="bool">false</tire-smoke>
   </model>
-
+  
   <flight-model>jsb</flight-model>
   <aero>C684</aero>
   <startup>
     <splash-texture>Aircraft/C684/splash.png</splash-texture>
   </startup>
-
-<!--
+  
+  <!--
   <flaps>
     <setting>0.0</setting>
     <setting>0.38</setting>
@@ -152,11 +153,11 @@
         </item>
         <item>
           <label>Toggle tire smoke</label>
-		  <binding>
-		    <command>property-toggle</command>
-		    <property>/sim/model/tire-smoke</property>
-		  </binding>
-		</item>
+	  <binding>
+	    <command>property-toggle</command>
+	    <property>/sim/model/tire-smoke</property>
+	  </binding>
+	</item>
       </menu>
     </default>
   </menubar>
@@ -260,18 +261,18 @@
 </input>
 
 <payload>
-  <weight>
-    <name type="string">Pilot</name>
-    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
-    <min-lb type="double">0.0</min-lb>
-    <max-lb type="double">250.0</max-lb>
-  </weight>
   <weight>
-    <name type="string">Passenger</name>
-    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
-    <min-lb type="double">0.0</min-lb>
-    <max-lb type="double">250.0</max-lb>
-  </weight>
+    <name type="string">Pilot</name>
+    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+    <min-lb type="double">0.0</min-lb>
+    <max-lb type="double">250.0</max-lb>
+  </weight>
+  <weight>
+    <name type="string">Passenger</name>
+    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+    <min-lb type="double">0.0</min-lb>
+    <max-lb type="double">250.0</max-lb>
+  </weight>
 </payload>
 
 <limits>
@@ -284,6 +285,21 @@
   <vne>215</vne>
 </limits>
 
+<!-- Declare some properties to avoid JSBSim warnings -->
+<!--
+<fdm>
+  <jsbsim>
+    <fcs>
+      <mixture-failure-cmd-norm>1</mixture-failure-cmd-norm>
+    </fcs>
+    <propulsion>
+      <engine n="0">
+	<failure>0</failure>
+      </engine>
+    </propulsion>
+  </jsbsim>
+</fdm>
+-->
 <!-- Nasal files/scripts -->
 <nasal>
   <failures>

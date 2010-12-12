@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>switch.ac</path>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>switch</object-name>
+    <property>controls/electric/battery-switch</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  20 </dep></entry>
+      <entry><ind> 1 </ind><dep> -20</dep></entry>
+    </interpolation>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0.0</z-m>  
+    </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>switch</object-name>
+    <object-name>base</object-name>
+    <visible>true</visible>
+    <action>
+      <repeatable>false</repeatable>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electric/battery-switch</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

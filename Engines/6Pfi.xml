@@ -24,7 +24,7 @@
   <idlerpm>               500.0 </idlerpm>
   <maxrpm>               2400.0 </maxrpm>
   <maxthrottle>             1.0 </maxthrottle>
-  <minthrottle>             0.1 </minthrottle>
+  <minthrottle>            0.15 </minthrottle>
   <sparkfaildrop>          0.15 </sparkfaildrop>
 </piston_engine>
 

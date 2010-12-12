@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<system name="Engine Control">
+  
+  <property>fcs/mixture-failure-cmd-norm</property>
+  <property>propulsion/engine[0]/failure</property>
+  <property>propulsion/engine[0]/throttle-factor-pos-norm</property>
+
+  <channel name="Engine Failures">
+    <switch name="Mixture Control">
+      <default value="fcs/mixture-cmd-norm"/>
+      <test value="fcs/mixture-failure-cmd-norm">
+	propulsion/engine/failure == 1
+      </test>
+      <output>fcs/mixture-pos-norm</output>
+    </switch>
+    
+    <pure_gain name="Throttle Position">
+      <input>fcs/throttle-cmd-norm</input>
+      <gain>propulsion/engine/throttle-factor-pos-norm</gain>
+      <output>fcs/throttle-pos-norm</output>
+    </pure_gain>
+  </channel>
+
+  <channel name="Propeller Pitch">
+    <aerosurface_scale name="Blade Angle">
+      <input>fcs/advance-pos-norm</input>
+      <domain>
+	<min>0</min>
+	<max>1</max>
+      </domain>
+      <range>
+	<min>20</min>
+	<max>26</max>
+      </range>
+      <zero_centered>0</zero_centered>
+      <output>propulsion/engine[0]/blade-angle</output>
+    </aerosurface_scale>
+  </channel>
+
+</system>
