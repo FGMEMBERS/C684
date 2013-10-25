@@ -50,8 +50,8 @@
 
     <counter>
       <particles-per-sec>
-        <property>velocities/uBody-fps</property>
-        <factor>0.2</factor>
+        <property>instrumentation/airspeed-indicator/true-speed-kt</property>
+        <factor>0.34</factor>
         <offset>3</offset>
         <spread>30</spread>
       </particles-per-sec>
