@@ -1,0 +1,405 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<!-- no need to load the panel in MP if the plane is at more than 100 m -->
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>100</max-m>
+  </animation>
+
+<!-- ACDFK: anemometer, VSI, slip/skid ball, inclinometer -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/ACDFK/ACDFK.xml</path>
+    <offsets>
+      <x-m>  0.006 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.200 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- landing anemometer -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/anemometer/badin.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.092 </y-m>
+      <z-m>  0.270 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- altimeter -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/altimeter/alti.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.092 </y-m>
+      <z-m>  0.270 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+ </model>
+
+<!-- compass -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/compass/compas.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.275 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- clock -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/clock/clock.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.170 </y-m>
+      <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- VSI -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/VSI/vsi.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.150 </y-m>
+      <z-m>  0.165 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- tachymeter -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/tachymeter/tach.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.180 </y-m>
+      <z-m>  0.170 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- bille -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/turn/bille.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.130 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/flaps/flapsGauge.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.240 </y-m>
+      <z-m>  0.150 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- battery switch -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/switches/battery-switch.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.260 </y-m>
+      <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- starter -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/switches/starter.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.230 </y-m>
+      <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- magnetos -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/magnetos/magnetos.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.300 </y-m>
+      <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- ammeter -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/ammeter/ammeter.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.080 </y-m>
+      <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- oil temperature -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/oil/oiltemp.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.280 </y-m>
+      <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- oil pressure -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/oil/oilpress.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.190 </y-m>
+      <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- aft fuel gauge -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/fuel/essenceav.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.010 </y-m>
+      <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- rear fuel gauge -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/fuel/essencear.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.100 </y-m>
+      <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- Pitch switches -->
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/switches/apply_pitch-switch.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.240 </y-m>
+      <z-m>  0.100 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/switches/pitch-lamp.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.240 </y-m>
+      <z-m>  0.080 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/switches/select_pitch-switch.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.268 </y-m>
+      <z-m>  0.100 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- big bezels -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/bezels/bezel.ac</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.092 </y-m>
+      <z-m>  0.270 </z-m>
+       <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/bezels/bezel.ac</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.092 </y-m>
+      <z-m>  0.270 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/bezels/bezel.ac</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.150 </y-m>
+      <z-m>  0.165 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/bezels/bezel.ac</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.180 </y-m>
+      <z-m>  0.170 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- small bezels -->
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/bezels/bezel-small.ac</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.280 </y-m>
+      <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/bezels/bezel-small.ac</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.190 </y-m>
+      <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/bezels/bezel-small.ac</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.100 </y-m>
+      <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/bezels/bezel-small.ac</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.010 </y-m>
+      <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/bezels/bezel-small.ac</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.080 </y-m>
+      <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/bezels/bezel-small.ac</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.170 </y-m>
+      <z-m>  0.060 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Instruments/bezels/bezel-small.ac</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.240 </y-m>
+      <z-m>  0.150 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

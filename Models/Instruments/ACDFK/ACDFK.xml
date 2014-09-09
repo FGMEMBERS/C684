@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <name>ACDFK</name>
+ <path>ACDFK.ac</path>
+
+ <animation>
+  <object-name>Plane.001</object-name>
+  <object-name>base1</object-name>
+  <object-name>base2</object-name>
+  <object-name>pitchIndicator</object-name>
+  <object-name>ball</object-name>
+  <object-name>quadrant</object-name>
+  <!-- transparent objects -->
+  <object-name>tubes</object-name>
+  <object-name>quadrant.001</object-name>
+  <object-name>base2.001</object-name>
+ </animation>
+
+<!-- Anemometer -->
+ <animation>
+  <type>rotate</type>
+  <object-name>speedNeedle</object-name>
+  <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+  <interpolation>
+   <entry><ind>       0</ind><dep>   3.5</dep></entry>
+   <entry><ind>      18</ind><dep>   4.0</dep></entry>
+   <entry><ind>      30</ind><dep>  11.0</dep></entry>
+   <entry><ind>   43.20</ind><dep>  23.0</dep></entry>
+   <entry><ind>   54.00</ind><dep>  34.5</dep></entry>
+   <entry><ind>   64.79</ind><dep>  48.0</dep></entry>
+   <entry><ind>   75.59</ind><dep>  66.0</dep></entry>
+   <entry><ind>   86.39</ind><dep>  87.1</dep></entry>
+   <entry><ind>   97.19</ind><dep> 111.3</dep></entry>
+   <entry><ind>  107.99</ind><dep> 137.3</dep></entry>
+   <entry><ind>  118.79</ind><dep> 166.6</dep></entry>
+   <entry><ind>  129.59</ind><dep> 197.7</dep></entry>
+   <entry><ind>  140.39</ind><dep> 230.1</dep></entry>
+   <entry><ind>  151.19</ind><dep> 268.1</dep></entry>
+   <entry><ind>  161.99</ind><dep> 307.2</dep></entry>
+   <entry><ind>  172.79</ind><dep> 349.1</dep></entry>
+   <entry><ind>  183.59</ind><dep> 390.6</dep></entry>
+   <entry><ind>  194.38</ind><dep> 430.6</dep></entry>
+   <entry><ind>  205.18</ind><dep> 477.0</dep></entry>
+   <entry><ind>  215.98</ind><dep> 523.9</dep></entry>
+   <entry><ind>  226.78</ind><dep> 567.5</dep></entry>
+   <entry><ind>  237.58</ind><dep> 615.2</dep></entry>
+   <entry><ind>  248.38</ind><dep> 666.5</dep></entry>
+  </interpolation>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+ </animation>
+
+<!-- Pitch indicator -->
+ <animation>
+  <type>textranslate</type>
+  <object-name>pitchIndicator</object-name>
+  <property>instrumentation/pitch-indicator/pitch-indicator-pos-deg</property>
+  <interpolation>
+   <entry>
+    <ind>-20.7</ind>
+    <dep>0.25</dep>
+   </entry>
+   <entry>
+    <ind>0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>20.7</ind>
+    <dep>-0.25</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+  </axis>
+ </animation>
+
+<!-- slip/skid ball -->
+ <animation>
+  <type>rotate</type>
+  <object-name>ball</object-name>
+  <property>instrumentation/slip-skid-ball/indicated-slip-skid</property>
+  <interpolation>
+   <entry>
+    <ind>  -1</ind>
+    <dep> -10</dep>
+   </entry>
+   <entry>
+    <ind>  0</ind>
+    <dep>  0</dep>
+   </entry>
+   <entry>
+    <ind>  1</ind>
+    <dep> 10</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0.08</z-m>
+  </center>
+ </animation>
+
+<!-- turn indicator -->
+ <animation>
+  <type>translate</type>
+  <object-name>turnNeedle</object-name>
+  <property>instrumentation/turn-indicator/indicated-turn-rate</property>
+  <factor>0.01465</factor>
+  <min-m>-0.0293</min-m>
+  <max-m>0.0293</max-m>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- Vertical Speed Indicator -->
+ <animation>
+  <type>translate</type>
+  <object-name>vsiNeedle</object-name>
+  <property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+  <factor>0.000012522</factor>
+  <min-m>-0.0263</min-m>
+  <max-m>0.0448</max-m>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+</PropertyList>
+
+

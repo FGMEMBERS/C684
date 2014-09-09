@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>mixture.ac</path>
+
+<animation>
+  <type>translate</type>
+  <object-name>mixture</object-name>
+  <property>controls/engines/engine[0]/mixture</property>
+  <factor>0.04</factor>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>mixture</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <interval-sec>0.1</interval-sec>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine[0]/mixture</property>
+      <step>0.01</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+    </binding>
+  </action>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <interval-sec>0.1</interval-sec>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine[0]/mixture</property>
+      <step>-0.01</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+    </binding>
+  </action>
+</animation>
+
+</PropertyList>

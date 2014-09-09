@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>alti.ac</path>
+<animation>
+  <type>rotate</type>
+  <object-name>aiguille100</object-name>
+  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.109</factor>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+  <center>
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+  </center>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>aiguille1000</object-name>
+  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.0109</factor>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+  <center>
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+  </center>
+</animation>
+
+<!-- pressure adjustment -->
+ <animation>
+   <type>texrotate</type>
+   <object-name>fenetre</object-name>
+   <property>/instrumentation/altimeter/setting-inhg</property>
+   <interpolation>
+     <entry>
+       <ind>27.833</ind>
+       <dep>0</dep>
+     </entry>
+     <entry>
+       <ind>31.387</ind>
+       <dep>360</dep>
+     </entry>
+    </interpolation>
+   <center>
+     <x>0.25</x>
+     <y>0.25</y>
+   </center>
+   <axis>
+     <x>0</x>
+     <y>0</y>
+     <z>-1</z>
+   </axis>
+ </animation>
+
+
+<!-- clicable things -->
+<animation>
+  <type>pick</type>
+  <object-name>bouton</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <interval-sec>0.1</interval-sec>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/altimeter/setting-inhg</property>
+      <step>0.01</step>
+      <min>26.0</min>
+      <max>33.0</max>
+      <wrap>false</wrap>
+    </binding>
+  </action>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <interval-sec>0.1</interval-sec>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/altimeter/setting-inhg</property>
+      <step>-0.01</step>
+      <min>26.0</min>
+      <max>33.0</max>
+      <wrap>false</wrap>
+    </binding>
+  </action>
+</animation>
+
+</PropertyList>

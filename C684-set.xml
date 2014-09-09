@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  
+<sim>
+  <description>Caudron C.684 Super Rafale</description>
+  <author>Guillaume Chauvat, Laurent Hayvel (texture)</author>
+  <status>early-production (0.4.13)</status>
+  <help>
+    <key>
+      <name>g</name>
+      <desc>Select slow high pitch</desc>
+    </key>
+    <key>
+      <name>G</name>
+      <desc>Select low pitch</desc>
+    </key>
+    <key>
+      <name>!</name>
+      <desc>Battery switch</desc>
+    </key>
+    <key>
+      <name>$</name>
+      <desc>Apply selected pitch</desc>
+    </key>
+    <title>Caudron C.684</title>
+    <line>____________________Procedures____________________</line>
+    <line></line>
+    <line>Pitch change:</line>
+    <line>  Apply pitch: off</line>
+    <line>  Pitch: selected</line>
+    <line>  Apply pitch: on</line>
+    <line>  When the light goes out: Apply pitch: off</line>
+    <line></line>
+    <line>Startup:</line>
+    <line>  Battery: on</line>
+    <line>  Magnetos: both</line>
+    <line>  Starter (5 seconds maxi)</line>
+    <line></line>
+    <line>Before Takeoff:</line>
+    <line>  Flaps: 20 deg</line>
+    <line></line>
+    <line>Takeoff:</line>
+    <line>  Apply full power</line>
+    <line>  Lift tail wheel at 100 km/h</line>
+    <line>  Let the plane takeoff itself at about 120 km/h</line>
+    <line>  Initial climb: 145 km/h</line>
+    <line></line>
+    <line>After takeoff</line>
+    <line>  Height: 100 m</line>
+    <line>  Flaps: 0 deg</line>
+    <line>  Pitch: High</line>
+    <line>  Climb at 200 km/h</line>
+    <line></line>
+    <line>Climb:</line>
+    <line>  Full power</line>
+    <line>  Low pitch</line>
+    <line>  150 km/h</line>
+    <line></line>
+    <line>Cruise Climb</line>
+    <line>  Hich pitch</line>
+    <line>  Full power</line>
+    <line>  200 km/h</line>
+    <line></line>
+    <line>Cruise:</line>
+    <line>  Pitch: high</line>
+    <line>  2200 rpm</line>
+    <line>  275 km/h</line>
+    <line>Downwind:</line>
+    <line>  Speed: 160 km/h</line>
+    <line>  Pitch: Low</line>
+    <line>  Flaps: 20 deg</line>
+    <line></line>
+    <line>Final:</line>
+    <line>  Flaps: 45 deg</line>
+    <line>  Pitch: Low</line>
+    <line>  Speed: 140 km/h</line>
+    <line></line>
+    <line>At Parking:</line>
+    <line>  Magnetos: off</line>
+    <line>  Battery: off</line>
+    <line>  Pitch: Low</line>
+  </help>
+  
+  <model>
+    <path>Aircraft/C684/Models/C684-model.xml</path>
+    <tire-smoke type="bool">false</tire-smoke>
+  </model>
+  
+  <flight-model>jsb</flight-model>
+  <aero>C684</aero>
+  <startup>
+    <splash-texture>Aircraft/C684/splash.png</splash-texture>
+  </startup>
+  
+  <!--
+  <flaps>
+    <setting>0.0</setting>
+    <setting>0.38</setting>
+    <setting>1.0</setting>
+  </flaps>
+  -->
+<!--
+  <systems>
+    <electrical>
+      <path>Aircraft/C684/Systems/electrical.xml</path>
+    </electrical>
+  </systems>
+-->
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+
+  <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+  <view n="100">
+    <name>Passenger View</name>
+    <internal archive="y">true</internal>
+    <type>lookfrom</type>
+    <config>
+      <from-model type="bool">true</from-model>
+      <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+      <x-offset-m archive="y">0.00</x-offset-m> <!-- right -->
+      <y-offset-m archive="y">0.41</y-offset-m> <!-- up -->
+      <z-offset-m archive="y">1.35</z-offset-m> <!-- back -->
+      <default-field-of-view-deg>55</default-field-of-view-deg>
+      <pitch-offset-deg>-3</pitch-offset-deg>
+    </config>
+  </view>
+  <view n="0">
+    <internal archive="y">true</internal>
+    <config>
+      <x-offset-m archive="y">0.00</x-offset-m> <!-- right -->
+      <y-offset-m archive="y">0.41</y-offset-m> <!-- up -->
+      <z-offset-m archive="y">0.60</z-offset-m> <!-- back -->
+      <pitch-offset-deg>-12</pitch-offset-deg>
+    </config>
+  </view>
+
+  <sound>
+    <path archive="y">Aircraft/C684/Sounds/C684-sound.xml</path>
+  </sound>
+
+  <menubar>
+    <default>
+      <menu n="10">
+        <label>C684</label>
+        <enabled type="bool">true</enabled>
+        <item>
+          <label>Autostart</label>
+          <binding>
+            <command>nasal</command>
+            <script>C684.autostart();</script>
+          </binding>
+        </item>
+        <item>
+          <label>Toggle tire smoke</label>
+	  <binding>
+	    <command>property-toggle</command>
+	    <property>/sim/model/tire-smoke</property>
+	  </binding>
+	</item>
+      </menu>
+    </default>
+  </menubar>
+
+</sim>
+
+<controls>
+  <engines>
+    <engine n="0">
+      <propeller-pitch>0.0</propeller-pitch> <!-- start at low pitch -->
+    </engine>
+  </engines>
+  <electric>
+    <battery-switch>0</battery-switch>
+  </electric>
+</controls>
+
+<input>
+  <keyboard>
+    <key n="103">
+      <name>g</name>
+      <desc>Select slow high pitch</desc>
+      <binding n="0">
+        <command>property-assign</command>
+        <property>/controls/switches/selected_pitch</property>
+        <value type="double">1</value>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/switch</property>
+      </binding>
+    </key>
+    <key n="71">
+      <name>G</name>
+      <desc>Select low pitch</desc>
+      <binding n="0">
+        <command>property-assign</command>
+        <property>/controls/switches/selected_pitch</property>
+        <value type="double">0</value>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/switch</property>
+      </binding>
+    </key>
+    <key n="115">
+      <name>s</name>
+      <desc>Fire Starter</desc>
+      <binding>
+        <command>nasal</command>
+        <script>C684.starter(1);</script>
+      </binding>
+      <mod-up>
+        <binding>
+        <command>nasal</command>
+        <script>C684.starter(0);</script>
+        </binding>
+      </mod-up>
+    </key>
+    <key n="36">
+      <name>$</name>
+      <desc>Apply selected pitch</desc>
+      <binding n="0">
+        <command>property-toggle</command>
+        <property>/controls/switches/apply_pitch</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/switch</property>
+      </binding>
+    </key>
+	<key n="33">
+      <name>!</name>
+      <desc>Battery switch</desc>
+      <binding n="0">
+        <command>property-toggle</command>
+        <property>/controls/electric/battery-switch</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/switch</property>
+      </binding>
+    </key>
+    <key n="100">
+      <name>d</name>
+      <desc>Left Pilot Canopy</desc>
+      <binding>
+        <command>nasal</command>
+        <script>C684.doorsystem.door1Lexport();</script>
+      </binding>
+    </key>
+    <key n="68">
+      <name>D</name>
+      <desc>Right Pilot Canopy</desc>
+      <binding>
+        <command>nasal</command>
+        <script>C684.doorsystem.door1Rexport();</script>
+      </binding>
+    </key>
+  </keyboard>
+</input>
+
+<payload>
+  <weight>
+    <name type="string">Pilot</name>
+    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+    <min-lb type="double">0.0</min-lb>
+    <max-lb type="double">250.0</max-lb>
+  </weight>
+  <weight>
+    <name type="string">Passenger</name>
+    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+    <min-lb type="double">0.0</min-lb>
+    <max-lb type="double">250.0</max-lb>
+  </weight>
+</payload>
+
+<limits>
+  <max-flap-extension-speed>
+    <flaps>0.4</flaps>
+    <speed>103</speed>
+  </max-flap-extension-speed>
+  <max-positive-g>3.5</max-positive-g>
+  <max-negative-g>-1.5</max-negative-g>
+  <vne>215</vne>
+</limits>
+
+<!-- Declare some properties to avoid JSBSim warnings -->
+<!--
+<fdm>
+  <jsbsim>
+    <fcs>
+      <mixture-failure-cmd-norm>1</mixture-failure-cmd-norm>
+    </fcs>
+    <propulsion>
+      <engine n="0">
+	<failure>0</failure>
+      </engine>
+    </propulsion>
+  </jsbsim>
+</fdm>
+-->
+<!-- Nasal files/scripts -->
+<nasal>
+  <failures>
+    <file>Aircraft/Generic/limits.nas</file>
+  </failures>
+  <instruments>
+    <file>Aircraft/C684/Nasal/instruments.nas</file>
+  </instruments>
+  <engine>
+    <file>Aircraft/C684/Nasal/engine.nas</file>
+  </engine>
+  <C684>
+    <file>Aircraft/C684/Nasal/C684.nas</file>
+    <file>Aircraft/C684/Nasal/doors.nas</file>
+  </C684>
+</nasal>
+
+</PropertyList>

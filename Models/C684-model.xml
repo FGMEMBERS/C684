@@ -1,0 +1,643 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>C684.ac</path>
+    <offsets>
+      <x-m> -3.00</x-m>
+      <y-m>  0.00</y-m>
+      <z-m>  0.00</z-m>
+    </offsets>
+
+<!-- groupes -->
+  <animation>
+    <name>helice</name>
+    <object-name>cone</object-name>
+    <object-name>pale1</object-name>
+    <object-name>pale2</object-name>
+    <object-name>disqueHelice</object-name>
+  </animation>
+
+<!-- tableau de bord -->
+  <model>
+    <path>Aircraft/C684/Models/Instruments/panel.xml</path>
+    <offsets>
+      <x-m>  3.067 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.000 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/C684/Models/Cockpit/cockpit.xml</path>
+    <offsets>
+      <x-m>  3.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.000 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- Effets chrome -->
+<!--
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>chrome.png</texture>
+    <object-name>pale1</object-name>
+    <object-name>pale2</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>chrome2.png</texture>
+    <object-name>verriere</object-name>
+  </animation>
+-->
+
+  <effect>
+  	<inherits-from>Aircraft/C684/Models/Effects/C684reflect</inherits-from>
+  	<object-name>capot</object-name>
+  	<object-name>fuselage</object-name>
+  	<object-name>ailes</object-name>
+  	<object-name>aileronG</object-name>
+  	<object-name>aileronD</object-name>
+  	<object-name>gouvProfG</object-name>
+  	<object-name>gouvProfD</object-name>
+  	<object-name>gouvDir</object-name>
+  	<object-name>carenageG</object-name>
+  	<object-name>carenageD</object-name>
+  	<object-name>hstab</object-name>
+  	<object-name>voletG</object-name>
+  	<object-name>voletD</object-name>
+  	<object-name>cone</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/C684/Models/Effects/glassReflect</inherits-from>
+    <object-name>verriere0</object-name>
+  	<object-name>verriere1L</object-name>
+  	<object-name>verriere1T</object-name>
+  	<object-name>verriere1R</object-name>
+  	<object-name>verriere2L</object-name>
+  	<object-name>verriere2T</object-name>
+  	<object-name>verriere2L</object-name>
+  </effect>
+
+  <effect>
+  	<inherits-from>Aircraft/C684/Models/Effects/metalReflect1</inherits-from>
+  	<object-name>pale1</object-name>
+  	<object-name>pale2</object-name>
+  </effect>
+
+<!-- fumée et poussière -->
+  <model>
+    <path>Aircraft/C684/Models/Effects/smoke.xml</path>
+    <offsets>
+      <x-m>  0.90 </x-m>
+      <y-m>  0.35 </y-m>
+      <z-m> -0.75 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <condition>
+	  <and>
+        <property>gear/gear[0]/wow</property>
+		<property>sim/model/tire-smoke</property>
+	  </and>
+    </condition>
+    <path>Aircraft/C684/Models/Effects/dust.xml</path>
+    <offsets>
+      <x-m>  2.25 </x-m>
+      <y-m> -0.90 </y-m>
+      <z-m> -1.34 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <condition>
+      <and>
+        <property>gear/gear[1]/wow</property>
+		<property>sim/model/tire-smoke</property>
+	  </and>
+    </condition>
+    <path>Aircraft/C684/Models/Effects/dust.xml</path>
+    <offsets>
+      <x-m>  2.25 </x-m>
+      <y-m>  0.90 </y-m>
+      <z-m> -1.34 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- Hélice -->
+
+  <animation>
+    <type>rotate</type>
+    <object-name>cone</object-name>
+    <object-name>pale1</object-name>
+    <object-name>pale2</object-name>
+    <property>controls/engines/engine[0]/propeller-offset</property>
+    <factor>360</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.003</z-m>
+    </center>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>helice</object-name>
+    <property>engines/engine[0]/rpm</property>
+    <factor>1</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.003</z-m>
+    </center>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>pale1</object-name>
+    <object-name>pale2</object-name>
+    <condition>
+      <less-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>250</value>
+      </less-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>disqueHelice</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>200</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>pale1</object-name>
+    <property>controls/engines/engine[0]/propeller-pitch</property>
+    <factor>-10</factor>
+    <center>
+      <x-m>0.334</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>pale2</object-name>
+    <property>controls/engines/engine[0]/propeller-pitch</property>
+    <factor>-10</factor>
+    <center>
+      <x-m>0.334</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>-1.0</z>
+    </axis>
+  </animation>
+
+<!-- ailerons -->
+  <animation>
+    <type>rotate</type>
+    <object-name>aileronG</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <factor>-15</factor>
+    <axis>
+      <x1-m>2.73</x1-m>
+      <y1-m>-2.27</y1-m>
+      <z1-m>-0.37</z1-m>
+      <x2-m>2.62</x2-m>
+      <y2-m>-3.42</y2-m>
+      <z2-m>-0.33</z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>aileronD</object-name>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <factor>-15</factor>
+    <axis>
+      <x1-m>2.73</x1-m>
+      <y1-m>2.27</y1-m>
+      <z1-m>-0.37</z1-m>
+      <x2-m>2.62</x2-m>
+      <y2-m>3.42</y2-m>
+      <z2-m>-0.33</z2-m>
+    </axis>
+  </animation>
+
+<!-- profondeur -->
+
+  <animation>
+    <type>rotate</type>
+    <object-name>gouvProfG</object-name>
+    <object-name>gouvProfD</object-name>
+    <object-name>hstab</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor>-3.5</factor>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+    <center>
+      <x-m>6.30</x-m>
+      <y-m>0.00</y-m>
+      <z-m>0.07</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>gouvProfG</object-name>
+    <object-name>gouvProfD</object-name>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor>20</factor>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+    <center>
+      <x-m>6.30</x-m>
+      <y-m>0.00</y-m>
+      <z-m>0.07</z-m>
+    </center>
+  </animation>
+
+<!-- direction -->
+  <animation>
+    <type>rotate</type>
+    <object-name>gouvDir</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>20</factor>
+    <axis>
+      <x1-m>6.51</x1-m>
+      <y1-m>0.00</y1-m>
+      <z1-m>0.14</z1-m>
+      <x2-m>6.52</x2-m>
+      <y2-m>0.00</y2-m>
+      <z2-m>1.01</z2-m>
+    </axis>
+  </animation>
+
+<!-- volets -->
+  <animation>
+    <type>rotate</type>
+    <object-name>voletG</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor>-45</factor>
+    <axis>
+      <x1-m>2.93</x1-m>
+      <y1-m>-0.39</y1-m>
+      <z1-m>-0.45</z1-m>
+      <x2-m>2.74</x2-m>
+      <y2-m>-2.27</y2-m>
+      <z2-m>-0.37</z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>voletD</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor>45</factor>
+    <axis>
+      <x1-m>2.93</x1-m>
+      <y1-m>0.39</y1-m>
+      <z1-m>-0.45</z1-m>
+      <x2-m>2.74</x2-m>
+      <y2-m>2.27</y2-m>
+      <z2-m>-0.37</z2-m>
+    </axis>
+  </animation>
+
+<!-- manche -->
+  <animation>
+    <type>rotate</type>
+    <object-name>manche</object-name>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor>25</factor>
+    <axis>
+      <x>0.0</x>
+      <y>-1.0</y>
+      <z>0.0</z>
+    </axis>
+    <center>
+      <x-m>3.28</x-m>
+      <y-m>0.00</y-m>
+      <z-m>-0.56</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>manche</object-name>
+    <property>controls/flight/aileron</property>
+    <factor>25</factor>
+    <axis>
+      <x>-1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+    <center>
+      <x-m>3.28</x-m>
+      <y-m>0.00</y-m>
+      <z-m>-0.56</z-m>
+    </center>
+  </animation>
+
+<!-- palonniers -->
+  <animation>
+    <type>rotate</type>
+    <object-name>paloG</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>40</factor>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+    <center>
+      <x-m>2.87</x-m>
+      <y-m>0.00</y-m>
+      <z-m>-0.527</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>paloD</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>40</factor>
+    <axis>
+      <x>0.0</x>
+      <y>-1.0</y>
+      <z>0.0</z>
+    </axis>
+    <center>
+      <x-m>2.87</x-m>
+      <y-m>0.00</y-m>
+      <z-m>-0.527</z-m>
+    </center>
+  </animation>
+
+<!-- cables -->
+  <animation>
+    <type>translate</type>
+    <object-name>cablePaloG</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>0.025</factor>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.03</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>cablePaloD</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>-0.025</factor>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.03</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>cableProf1</object-name>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor>-0.030</factor>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.07</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>cableProf1</object-name>
+    <property>controls/flight/aileron</property>
+    <factor>-1.00</factor>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+    <center>
+      <x-m>4.60</x-m>
+      <y-m>0.00</y-m>
+      <z-m>0.00</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>cableAileronD</object-name>
+    <object-name>cableAileronG</object-name>
+    <property>controls/flight/aileron</property>
+    <factor>0.030</factor>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>cableAileronG</object-name>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor>6.00</factor>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+    <center>
+      <x-m>3.28</x-m>
+      <y-m>-0.30</y-m>
+      <z-m>0.00</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>cableAileronD</object-name>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor>-6.00</factor>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+    <center>
+      <x-m>3.28</x-m>
+      <y-m>0.30</y-m>
+      <z-m>0.00</z-m>
+    </center>
+  </animation>
+
+<!-- enfoncement du train -->
+  <animation>
+    <type>translate</type>
+    <object-name>roueG</object-name>
+    <object-name>carenageG</object-name>
+    <property>gear/gear[0]/compression-norm</property>
+    <factor>0.25</factor>
+    <axis>
+      <x>0.15</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>roueD</object-name>
+    <object-name>carenageD</object-name>
+    <property>gear/gear[1]/compression-norm</property>
+    <factor>0.25</factor>
+    <axis>
+      <x>0.15</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+  </animation>
+
+<!-- rotation des roues -->
+  <animation>
+    <type>spin</type>
+    <object-name>roueG</object-name>
+    <property>gear/gear[0]/rollspeed-ms</property>
+    <factor>-10</factor>
+    <center>
+      <x-m>2.111</x-m>
+      <y-m>0</y-m>
+      <z-m>-1.112</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+ </animation>
+
+   <animation>
+    <type>spin</type>
+    <object-name>roueD</object-name>
+    <property>gear/gear[1]/rollspeed-ms</property>
+    <factor>-10</factor>
+    <center>
+      <x-m>2.111</x-m>
+      <y-m>0</y-m>
+      <z-m>-1.112</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+ </animation>
+
+<!-- verriere -->
+<!--
+  <animation>
+    <type>select</type>
+    <object-name>verriere</object-name>
+    <condition>
+      <not-equals>
+        <property>sim/current-view/view-number</property>
+        <value>0</value>
+      </not-equals>
+    </condition>
+  </animation>
+-->
+
+  <animation>
+    <type>rotate</type>
+    <object-name>verriere1L</object-name>
+    <object-name>door1L</object-name>
+    <property>surface-positions/doors/door1L/position-norm</property>
+    <factor>37</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>3.500</x-m>
+      <y-m>0.279</y-m>
+      <z-m>0.092</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>verriere1R</object-name>
+    <object-name>door1R</object-name>
+    <property>surface-positions/doors/door1R/position-norm</property>
+    <factor>-37</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>3.500</x-m>
+      <y-m>-0.279</y-m>
+      <z-m>0.092</z-m>
+    </center>
+  </animation>
+
+</PropertyList>

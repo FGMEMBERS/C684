@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <name>badin</name>
+  <path>badin.ac</path>
+  
+  <animation>
+    <type>material</type>
+    <object-name>cadran</object-name>
+    <object-name>aiguille</object-name>
+    <emission>
+      <red>1.0</red>
+      <green>0.2</green>
+      <blue>0.1</blue>
+      <factor-prop>/sim/model/material/instruments/factor</factor-prop>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>aiguille</object-name>
+    <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+    <interpolation>
+      <entry><ind>    0</ind><dep>   0.6</dep></entry>
+      <entry><ind>   10</ind><dep>     3</dep></entry>
+      <entry><ind> 21.6</ind><dep>  10.8</dep></entry>
+      <entry><ind> 32.4</ind><dep>  32.8</dep></entry>
+      <entry><ind> 43.2</ind><dep>  57.1</dep></entry>
+      <entry><ind> 54.0</ind><dep>  87.8</dep></entry>
+      <entry><ind> 64.8</ind><dep> 125.4</dep></entry>
+      <entry><ind> 75.6</ind><dep> 167.4</dep></entry>
+      <entry><ind> 86.4</ind><dep> 216.7</dep></entry>
+      <entry><ind> 97.2</ind><dep> 274.4</dep></entry>
+      <entry><ind> 108</ind><dep>  338.9</dep></entry>
+      <entry><ind> 111</ind><dep>  359.4</dep></entry>
+    </interpolation>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+</PropertyList>
+
+
